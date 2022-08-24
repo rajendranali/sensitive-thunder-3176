@@ -6,13 +6,11 @@ import {
   tr,
   Th,
   Td,
-  TableContainer,
   Box,
   Text,
   Tr,
 } from "@chakra-ui/react";
 import BtnComponent from "./BtnComponent";
-import { CheckIcon } from "@chakra-ui/icons";
 import styles from "./Pricing.module.css";
 import { useSelector } from "react-redux";
 import CheckIconTd from "./CheckIconTd";
@@ -120,7 +118,14 @@ const PlanTable = () => {
           </Thead>
 
           <Tbody>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Time tracking
             </Text>
             <Tr>
@@ -240,7 +245,14 @@ const PlanTable = () => {
                 fourth={true}
               />
             </Tr>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Reporting
             </Text>
             <Tr>
@@ -360,7 +372,14 @@ const PlanTable = () => {
                 fourth={true}
               />
             </Tr>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Collaboration
             </Text>
             <Tr>
@@ -455,7 +474,14 @@ const PlanTable = () => {
               />
             </Tr>
 
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Billing & Invoicing
             </Text>
             <Tr>
@@ -523,7 +549,14 @@ const PlanTable = () => {
                 fourth={true}
               />
             </Tr>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Integrations & Add-ons
             </Text>
             <Tr>
@@ -591,7 +624,14 @@ const PlanTable = () => {
                 fourth={true}
               />
             </Tr>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               Security
             </Text>
             <Tr>
@@ -672,7 +712,14 @@ const PlanTable = () => {
                 fourth={true}
               />
             </Tr>
-            <Text textAlign={"start"} mt={"30px"} mb={"30px"} ml={"30px"} fontWeight={"700"} fontSize={"18px"}>
+            <Text
+              textAlign={"start"}
+              mt={"30px"}
+              mb={"30px"}
+              ml={"30px"}
+              fontWeight={"700"}
+              fontSize={"18px"}
+            >
               24h Support
             </Text>
             <Tr>

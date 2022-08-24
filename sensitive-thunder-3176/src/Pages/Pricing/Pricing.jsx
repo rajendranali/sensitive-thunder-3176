@@ -11,13 +11,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import BtnComponent from "./BtnComponent";
 import CustomerReview from "./CustomerReview";
 import PlanTable from "./PlanTable";
 import PricingCard from "./PricingCard";
 import styles from "./Pricing.module.css";
 import FrequentQues from "./FrequentQues";
-import pricingImg from "./pricing.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -43,8 +41,26 @@ const Pricing = () => {
   };
 
   return (
-    <Box align="center" justify="center" mt={"150px"}>
-      <Box maxW={"100%"}>
+    <Box align="center" justify="center">
+      <Box bgColor={"#f3f3f3"} w={"100%"} h={360} border={"1px solid #f3f3f3"}>
+        <Box w={"50%"} mt={100}>
+          <Text fontSize={"33px"} fontWeight={"700"}>
+            TimeCamp fits perfectly for companies big and small. Regardless of
+            your budget.
+          </Text>
+        </Box>
+        <Box w={"50%"} mt={50}>
+       <Text fontSize={"20px"} >
+            Choose the most accurate pricing for you and start gaining crucial
+            insight   s for your business. 
+          </Text>
+          <Text fontSize={"20px"} fontWeight={500} >
+          You can also start with a free 14-day trial.
+          </Text>
+          
+        </Box>
+      </Box>
+      <Box maxW={"100%"} mt={70} >
         <Box
           justifyContent={"center"}
           alignItems={"center"}
@@ -471,7 +487,7 @@ const Pricing = () => {
         </Grid>
       </Box>
       {/* frequent question */}
-      <Container maxW={"50%"} mb={"2  00px"} >
+      <Container maxW={"50%"} mb={"2  00px"}>
         <Box justifyContent={"center"} margin={"auto"}>
           <Text
             fontSize="30px"
@@ -485,7 +501,6 @@ const Pricing = () => {
         </Box>
         <FrequentQues />
       </Container>
-      
     </Box>
   );
 };

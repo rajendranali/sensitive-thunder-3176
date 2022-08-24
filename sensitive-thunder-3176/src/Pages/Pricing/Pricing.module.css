@@ -26,8 +26,6 @@
 
 Th {
   text-align: center !important;
-  
-
 }
 Thead > Tr > Th :nth-child(1) {
   text-align: center !important;
@@ -36,6 +34,3 @@ Td {
   text-align: center !important;
   font-size: 18px;
 }
-
-
-

@@ -1,6 +1,5 @@
-import { Box, Container, Flex, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import React from "react";
-import ReviewCard from "./ReviewCard";
 
 const CustomerReview = () => {
   return (
@@ -20,9 +19,8 @@ const CustomerReview = () => {
           h={"590px"}
           w={"33%"}
           p={"20px"}
-          backgroundColor={"white"} 
+          backgroundColor={"white"}
           borderRadius={"13px"}
-          
         >
           <Text
             textAlign={"left"}
@@ -56,7 +54,7 @@ const CustomerReview = () => {
           h={"590px"}
           w={"33%"}
           p={"20px"}
-          backgroundColor={"white"} 
+          backgroundColor={"white"}
           borderRadius={"13px"}
         >
           <Text
@@ -87,7 +85,7 @@ const CustomerReview = () => {
           h={"590px"}
           w={"33%"}
           p={"20px"}
-          backgroundColor={"white"} 
+          backgroundColor={"white"}
           borderRadius={"13px"}
         >
           <Text

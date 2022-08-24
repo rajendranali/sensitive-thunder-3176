@@ -7,7 +7,7 @@ import styles from "./Pricing.module.css";
 const BtnComponent = ({ label, sizeGiven, status }) => {
   const navigate = useNavigate();
   // const isAuth = useSelector((state) => state.isAuth);
-  const isAuth = true
+  const isAuth = true;
 
   const handleBtnClick = () => {
     if (label === "Get Started Today" && isAuth) {
@@ -18,10 +18,8 @@ const BtnComponent = ({ label, sizeGiven, status }) => {
       return navigate("/payment");
     } else if (!isAuth) {
       navigate("/auth/signup");
-    }
-    else if(label==="Compare Plan")
-    {
-      navigate("/pricing")
+    } else if (label === "Compare Plan") {
+      navigate("/pricing");
     }
   };
   return (
@@ -31,8 +29,20 @@ const BtnComponent = ({ label, sizeGiven, status }) => {
       fontWeight={"400"}
       // border={"1px solid blue"}
       borderRadius={"30px"}
-      bgColor={(label === "Join for free" || label === "Start your free trial" ||label === "Contact us" ) ? "#25cf60" : "orange"}
-      color={(label === "Join for free" || label === "Start your free trial" ||label === "Contact us" )  ? "white" : "#5846f6"}
+      bgColor={
+        label === "Join for free" ||
+        label === "Start your free trial" ||
+        label === "Contact us"
+          ? "#25cf60"
+          : "orange"
+      }
+      color={
+        label === "Join for free" ||
+        label === "Start your free trial" ||
+        label === "Contact us"
+          ? "white"
+          : "#5846f6"
+      }
       size={sizeGiven === 100 ? "100%" : "lg"}
       className={status === "active" ? styles.activeBtn : ""}
       onClick={handleBtnClick}

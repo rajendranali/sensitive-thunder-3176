@@ -7,12 +7,8 @@ const CheckIconTd = ({ first, second, third, fourth }) => {
     <>
       <Td>{first && <Box as={CheckIcon} color="black"></Box>}</Td>
       <Td>{second && <Box as={CheckIcon} color="black"></Box>}</Td>
-      <Td>
-      {third && <Box as={CheckIcon} color="black"></Box>}
-      </Td>
-      <Td>
-      {fourth && <Box as={CheckIcon} color="black"></Box>}
-      </Td>
+      <Td>{third && <Box as={CheckIcon} color="black"></Box>}</Td>
+      <Td>{fourth && <Box as={CheckIcon} color="black"></Box>}</Td>
     </>
   );
 };
