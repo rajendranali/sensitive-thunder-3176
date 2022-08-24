@@ -5,10 +5,9 @@ import Nav from "./Nav";
 const Navbar = () => {
   return (
     <div className={styles.Navbar_container}>
-      <Navbarheader></Navbarheader>
+      <Navbarheader className={styles.navheader_css}></Navbarheader>
       <div>
-
-  <Nav></Nav>
+        <Nav></Nav>
       </div>
     </div>
   );
