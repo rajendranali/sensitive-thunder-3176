@@ -1,15 +1,24 @@
-.container{
-    border: 2px solid teal;
-    width: 100%;
-    height: 1000px;
+.container {
+  border: 2px solid teal;
+  width: 100%;
+  height: 1000px;
 }
-.image_conatiner{
 
-    width: 100%;
-    height: 500px;
-
+/* Midlle Section Css */
+.image_container {
+  width: 100%;
+  height: 500px;
 }
-.image_conatiner img{
-    width: 100%;
-    height: 400px;
+
+.image_div {
+  width: 100%;
+  height: 500px;
+
+  background-size: 100% 100%;
+  background-image: url("https://cdn-m.timecamp.com/img/backgroundTop.webp");
+}
+@media screen and (max-width: 940px) {
+  .image_div {
+    display: none;
+  }
 }

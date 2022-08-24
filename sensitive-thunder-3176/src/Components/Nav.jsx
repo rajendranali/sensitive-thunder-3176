@@ -11,7 +11,7 @@ const Nav = () => {
   const [scrollclass, setScrollClass] = React.useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
-    console.log(position);
+
     setScrollPosition(position);
     if (Number(position) > 20) {
       setScrollClass(true);
@@ -31,7 +31,7 @@ const Nav = () => {
   const closeMenu = () => setClick(false);
   const navigatortoothersite = () => {};
   return (
-    <div className="header" id={scrollclass?"headercon":""}>
+    <div className="header" id={scrollclass ? "headercon" : ""}>
       <nav className="navbar">
         <Link to="/" className="logo">
           <img
@@ -78,6 +78,10 @@ const Nav = () => {
           onClick={navigatortoothersite}
           backgroundColor={"#F7B801"}
           borderRadius={"45px"}
+          color={"#ffffff"}
+          size="lg"
+          variant="solid"
+          _hover={{ bg: "#c79603;" }}
         >
           Go To App
         </Button>

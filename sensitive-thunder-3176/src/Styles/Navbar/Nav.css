@@ -1,32 +1,9 @@
-#headercon{
+#headercon {
   top: 0;
   left: 0;
 }
 
-
-
-
-
-
-
-
-
-
 /* icon code end */
-.headercondition {
- 
-  position: fixed;
-  height: 90px;
-  width: 100%;
-  /* top: 0;
-    left: 0; */
-  z-index: 1;
-  transition: 0.3s ease-in;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  background-color: #ffffff;
-}
 
 .header {
   position: fixed;
@@ -123,7 +100,9 @@ ul {
   .nav-item {
     margin: 1rem 0;
   }
-
+  .btn_navbar {
+    display: none;
+  }
   .header .navbar img {
     width: 150px;
   }
@@ -140,10 +119,8 @@ ul {
     width: 100px;
     height: 100px;
   }
-  .btn_navbar button {
-    width: 100px;
-    height: 100px;
-    padding: 10px;
+  .btn_navbar {
+    display: none;
   }
 
   .nav-item {

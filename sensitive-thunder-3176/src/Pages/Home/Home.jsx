@@ -5,7 +5,7 @@ const Home = () => {
 
   return (  
     <div className={a.container}>
-
+Home page
 <Middlesection></Middlesection>
 
     </div>
