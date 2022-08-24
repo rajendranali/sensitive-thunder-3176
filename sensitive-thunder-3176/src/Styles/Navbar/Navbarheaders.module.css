@@ -1,0 +1,24 @@
+.conatiner_navbar {
+  width: 100%;
+  height: 20%;
+  background-color: #25cf60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.underline_tag {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 940px) {
+  .conatiner_navbar {
+    width: 100%;
+    height: 32%;
+    background-color: #25cf60;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+}
