@@ -1,0 +1,41 @@
+.btnGetStarted:hover {
+  color: white;
+}
+.stybillActive {
+  background-color: #25cf60;
+  color: white !important;
+}
+.stybillDeactive {
+  background-color: white;
+  color: gray;
+}
+.activeBtn {
+  background-color: #5846f6 !important;
+  color: white !important;
+}
+.btnSpanActive {
+  font-weight: 600;
+  margin-left: 5px;
+  color: white;
+}
+.btnSpanDeactive {
+  font-weight: 600;
+  margin-left: 5px;
+  color: #25cf60;
+}
+
+Th {
+  text-align: center !important;
+  
+
+}
+Thead > Tr > Th :nth-child(1) {
+  text-align: center !important;
+}
+Td {
+  text-align: center !important;
+  font-size: 18px;
+}
+
+
+
