@@ -1,10 +1,10 @@
 import React ,{useState}from 'react'
 import styles from"./allintegration.module.css"
 import {data} from "./data"
-import {Box,HStack,Heading,Image,Flex,Text,Button,SimpleGrid} from "@chakra-ui/react"
+import {Box,Image,SimpleGrid} from "@chakra-ui/react"
 const Integration = () => {
   const [sort ,setsort]=useState("")
- let update=data.filter((data)=>{ return sort?data.type==sort:data
+ let update=data.filter((data)=>{ return sort?data.type===sort:data
 
  })
 
@@ -22,7 +22,7 @@ const Integration = () => {
         </Box>
         <Box>
            
-            <img className={styles.imgslack} src="https://cdn-m.timecamp.com/img/greenbranding/rightHero.png"/>
+            <img className={styles.imgslack} src="https://cdn-m.timecamp.com/img/greenbranding/rightHero.png" alt='img'/>
         </Box>
     </div>
    <div style={{marginTop:"150px"}} className={styles.app}>
