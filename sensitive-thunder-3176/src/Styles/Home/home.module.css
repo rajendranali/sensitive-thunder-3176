@@ -18,27 +18,27 @@
   background-image: url("https://cdn-m.timecamp.com/img/backgroundTop.webp");
 }
 .above_imagediv {
-  width:99%;
+  width: 99%;
   height: 100%;
 
-display: flex;
+  display: flex;
 }
-.happy_box{
+.happy_box {
   width: 45%;
-height: 85%;
-border: 3px solid green;
-margin-left: 50px;
-margin-top: 60px;
-background-color: #ffffff;
+  height: 88%;
+
+  margin-left: 50px;
+  margin-top: 60px;
+  background-color: #ffffff;
 }
-.review_company{
-  width:90%;
+.review_company {
+  width: 90%;
   height: 70%;
 
-margin: auto;
-margin-top: 20px;
+  margin: auto;
+  margin-top: 20px;
 }
-.review_company h2{
+.review_company h2 {
   text-align: center;
   color: #1b1b20;
   font-family: "nunito sans", sans-serif;
@@ -47,42 +47,96 @@ margin-top: 20px;
   line-height: 24px;
 }
 
-.review_company p{
-text-align: center;
-margin-top: 20px;
-color: #1b1b20;
-font-family: "nunito sans", sans-serif;
-font-weight: 600;
-font-size: 14px;
-line-height: 21px;
-padding: 0 2rem;
-margin-bottom: 3rem;
+.review_company p {
+  text-align: center;
+  margin-top: 20px;
+  color: #1b1b20;
+  font-family: "nunito sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
 }
-.logo_raindroup{
-width: 23%;
-height: 23%;
-margin: auto;
+.logo_raindroup {
+  width: 23%;
+  height: 23%;
+  margin: auto;
 }
-.circle_image{
-  width:15%;
+.circle_image {
+  width: 15%;
 
-  height:100px;
- margin: auto;
- background-image: url("https://cdn-m.timecamp.com/img/person.jpg");
- background-size: 100% 100%;
- margin-top: -50px;
- border-radius: 50%;
-} 
-.outer{
+  height: 100px;
+  margin: auto;
+  background-image: url("https://cdn-m.timecamp.com/img/person.jpg");
+  background-size: 100% 100%;
+  margin-top: -50px;
+  border-radius: 50%;
+}
+.outer {
   width: 48%;
   height: 42%;
 
   margin-left: 50px;
   margin-top: 320px;
   margin-right: 20px;
-background-color: #ffffff;
+  background-color: #ffffff;
+}
+.inner_div {
+  width: 80%;
+  height: 90%;
 
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.text_div {
 
+  width: 90%;
+  height: 11%;
+}
+.text_div h1 {
+  font-family: "nunito sans", sans-serif;
+  color: #1b1b20;
+  line-height: 15px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+.text_div h2 {
+  font-family: "Lato", sans-serif;
+font-size: 52px;
+  color: #1b1b20;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 57px;
+}
+.text_div1{
+ 
+  width: 90%;
+  height: 7%;
+}
+.btn_reveiw{
+  width: 99%;
+  height: 15%;
+
+display: flex;
+justify-content: space-evenly;
+}
+.btn_reveiw .btn{
+  width:200px;
+  height:50px;
+  margin-top: 30px;
+  border-radius: 100px;
+  background-color: #1DA44C;
+  color:#ffffff;
+  font-size: 16px;
+  font-family: "nunito sans", sans-serif;
+}
+.btn_reveiw .btn:hover{
+  background-color: #0a8c37
+}
+.btn_reveiw .text{
+  margin-top: 40px;
 }
 @media screen and (max-width: 940px) {
   .image_div {
