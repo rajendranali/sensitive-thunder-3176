@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styles from "./Pricing.module.css";
 
-const BtnComponent = ({ label, sizeGiven, status }) => {
+const BtnComponent = ({ label, sizeGiven, status, setActive }) => {
   const navigate = useNavigate();
   // const isAuth = useSelector((state) => state.isAuth);
   const isAuth = true;
@@ -24,17 +24,18 @@ const BtnComponent = ({ label, sizeGiven, status }) => {
   };
   return (
     <Button
-      _hover={{ backgroundColor: "#5846f6", color: "white" }}
+      _hover={{ backgroundColor: "#1da44c", color: "white" }}
       h={"50px"}
       fontWeight={"400"}
-      // border={"1px solid blue"}
       borderRadius={"30px"}
       bgColor={
         label === "Join for free" ||
         label === "Start your free trial" ||
         label === "Contact us"
           ? "#25cf60"
-          : "orange"
+          : "orange" || setActive == true
+          ? "white"
+          : ""
       }
       color={
         label === "Join for free" ||

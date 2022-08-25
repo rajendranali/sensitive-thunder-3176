@@ -1,9 +1,4 @@
-import {
-  Box,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import React from "react";
 import BtnComponent from "./BtnComponent";
 
@@ -17,6 +12,7 @@ const PricingCard = ({
   sizeGiven,
   status,
   includeList,
+  setActive,
 }) => {
   return (
     <Box h={"90%"}>
@@ -31,6 +27,8 @@ const PricingCard = ({
         marginBottom={"40px"}
         justifyContent={"center"}
         margin={"auto"}
+        bgColor={setActive === true ? "#25cf60" : "white"}
+        color={setActive === true ? "white" : ""}
       >
         <Box>
           <Text
@@ -39,7 +37,7 @@ const PricingCard = ({
             fontWeight={"700"}
             fontSize={"10px"}
             lineHeight={"22px"}
-            color={"#25cf60;"}
+            color={setActive === true ? "white" : "#25cf60"}
           >
             {title === "None" ? (
               <Text style={{ color: "white" }}>.</Text>
@@ -51,7 +49,7 @@ const PricingCard = ({
             <Text
               fontWeight={"600"}
               fontSize={"36px"}
-              color={"black"}
+              color={setActive === true ? "white" : "black"}
               lineHeight={"22px"}
             >
               {title === "BASIC" || title === "PRO" ? (
@@ -86,7 +84,7 @@ const PricingCard = ({
             mb={"15px"}
             fontSize="15px"
             lineHeight="20px"
-            color={"#767676"}
+            color={setActive === true ? "white" : "#767676"}
           >
             {description}
           </Text>
@@ -97,20 +95,26 @@ const PricingCard = ({
             label={btnLabel}
             sizeGiven={sizeGiven}
             status={status}
+            setActive={setActive}
           />
         </Box>
         <Box textAlign={"left"}>
-          <Text fontSize="15px" color={"#767676"} m={"35px 10px 10px 10px"}>
+          <Text
+            fontSize="15px"
+            color={setActive === true ? "white" : "black"}
+            fontWeight={500}
+            m={"35px 10px 10px 10px"}
+          >
             {includeHeading}
           </Text>
           <UnorderedList spacing={2} ml={"20px"}>
             {includeList.map((item, index) => (
               <ListItem>
                 <Box mb={"-8px"}>
-                  {/* <ListIcon key={index} as={CheckIcon} color="green.500" /> */}
-
-                  <Text color={"#767676"} fontSize="15px">
-                    {" "}
+                  <Text
+                    color={setActive === true ? "white" : "#767676"}
+                    fontSize="15px"
+                  >
                     {item.title}
                   </Text>
                 </Box>
