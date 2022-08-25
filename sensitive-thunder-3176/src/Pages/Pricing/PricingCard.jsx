@@ -1,16 +1,11 @@
-import { CheckIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Heading,
-  List,
-  ListIcon,
   ListItem,
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
 import React from "react";
 import BtnComponent from "./BtnComponent";
-import { Icon, createIcon } from "@chakra-ui/react";
 
 const PricingCard = ({
   title,

@@ -18,6 +18,14 @@ import styles from "./Pricing.module.css";
 import FrequentQues from "./FrequentQues";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { extendTheme } from "@chakra-ui/react";
+
+const breakpoints = {
+  sm: "360px",
+  xl: "1200px",
+};
+
+const theme = extendTheme({ breakpoints });
 
 const Pricing = () => {
   const [billMonthly, setBillMonthly] = useState(true);
@@ -41,26 +49,39 @@ const Pricing = () => {
   };
 
   return (
-    <Box align="center" justify="center">
-      <Box bgColor={"#f3f3f3"} w={"100%"} h={360} border={"1px solid #f3f3f3"}>
-        <Box w={"50%"} mt={100}>
-          <Text fontSize={"33px"} fontWeight={"700"}>
+    <Box align="center" justify="center" width={{ base: "100%" }}>
+      <Box
+        width={{ base: "100%", xl: "100%" }}
+        bgColor={"#f3f3f3"}
+        w={"100%"}
+        h={{ xl: "360px", sm: "700px" }}
+        border={"1px solid #f3f3f3"}
+      >
+        <Box w={{ xl: "50%", sm: "75%" }} mt={100}>
+          <Text
+            fontSize={"33px"}
+            lineHeight={{ xl: "1.6", sm: "70%" }}
+            fontWeight={"700"}
+          >
             TimeCamp fits perfectly for companies big and small. Regardless of
             your budget.
           </Text>
         </Box>
-        <Box w={"50%"} mt={50}>
-       <Text fontSize={"20px"} >
+        <Box w={{ xl: "50%", sm: "100%" }} mt={50}>
+          <Text fontSize={"20px"}>
             Choose the most accurate pricing for you and start gaining crucial
-            insight   s for your business. 
+            insights for your business.
           </Text>
-          <Text fontSize={"20px"} fontWeight={500} >
-          You can also start with a free 14-day trial.
+          <Text fontSize={"20px"} fontWeight={500}>
+            You can also start with a free 14-day trial.
           </Text>
-          
         </Box>
       </Box>
-      <Box maxW={"100%"} mt={70} >
+      <Box
+        maxW={"100%"}
+        mt={70}
+        width={{ base: "100%", xl: "100%" }}
+      >
         <Box
           justifyContent={"center"}
           alignItems={"center"}
@@ -79,7 +100,7 @@ const Pricing = () => {
           </Text>
         </Box>
         <Box
-          w={"50%"}
+          w={{xl:"50%", sm:"100%"}}
           justifyContent={"center"}
           margin={"auto"}
           alignItems={"center"}
@@ -96,7 +117,7 @@ const Pricing = () => {
           </Text>
         </Box>
         <Box
-          w={"35%"}
+          w={{xl:"50%", sm:"100%"}}
           justifyContent={"center"}
           margin={"auto"}
           alignItems={"center"}
@@ -125,7 +146,8 @@ const Pricing = () => {
           mb={"80px"}
         >
           <Flex align="center" justify="center">
-            <ButtonGroup variant="outline" spacing={"-0.1"} cursor={"pointer"}>
+            <ButtonGroup variant="outline"
+             spacing={"-0.1"} cursor={"pointer"}>
               <Button
                 borderRadius={"30px"}
                 border={"none"}
