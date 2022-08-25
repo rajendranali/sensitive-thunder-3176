@@ -23,7 +23,7 @@ const Allroutes = () => {
       <Route path="/bookdemo" element={<Bookdemo/>}></Route>
       <Route path="/blog" element={<Blog/>}></Route>
     </Routes>
-    {/* <Footer></Footer> */}
+    <Footer/>
     </>
   );
 };
