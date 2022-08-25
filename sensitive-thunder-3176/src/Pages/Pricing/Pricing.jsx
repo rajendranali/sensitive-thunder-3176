@@ -9,6 +9,7 @@ import {
   Image,
   Text,
   VStack,
+  Stack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import CustomerReview from "./CustomerReview";
@@ -22,7 +23,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 const breakpoints = {
   sm: "360px",
-  xl: "1200px",
+  xl: "1280px",
 };
 
 const theme = extendTheme({ breakpoints });
@@ -77,11 +78,7 @@ const Pricing = () => {
           </Text>
         </Box>
       </Box>
-      <Box
-        maxW={"100%"}
-        mt={70}
-        width={{ base: "100%", xl: "100%" }}
-      >
+      <Box maxW={"100%"} mt={70} width={{ base: "100%", xl: "100%" }}>
         <Box
           justifyContent={"center"}
           alignItems={"center"}
@@ -100,7 +97,7 @@ const Pricing = () => {
           </Text>
         </Box>
         <Box
-          w={{xl:"50%", sm:"100%"}}
+          w={{ xl: "50%", sm: "100%" }}
           justifyContent={"center"}
           margin={"auto"}
           alignItems={"center"}
@@ -117,7 +114,7 @@ const Pricing = () => {
           </Text>
         </Box>
         <Box
-          w={{xl:"50%", sm:"100%"}}
+          w={{ xl: "50%", sm: "100%" }}
           justifyContent={"center"}
           margin={"auto"}
           alignItems={"center"}
@@ -146,8 +143,7 @@ const Pricing = () => {
           mb={"80px"}
         >
           <Flex align="center" justify="center">
-            <ButtonGroup variant="outline"
-             spacing={"-0.1"} cursor={"pointer"}>
+            <ButtonGroup variant="outline" spacing={"-0.1"} cursor={"pointer"}>
               <Button
                 borderRadius={"30px"}
                 border={"none"}
@@ -192,12 +188,15 @@ const Pricing = () => {
         </Box>
       </Box>
       <HStack
+        direction={{ xl: "row", sm: "column" }}
         justifyContent={"center"}
         mt="30px"
         margin={"auto"}
         gap={"14px"}
-        w={"63%"}
+        // w={ { base:"50%", xl:"95%", sm:"63%"}}
+        w={{xl:"70%"}}
         h={"600px"}
+        // h={{xl:"780px", base:"600px"}}
       >
         <Box h={"100%"} w={"22%"}>
           <PricingCard
@@ -246,6 +245,7 @@ const Pricing = () => {
             title="PRO"
             cost={billMonthly ? "199" : "149"}
             costDescription="user/mo"
+            setActive={true}
             description={"Get full control over your business"}
             // btnLabel={isAuth ? "Upgrade" : "Get Started"}
             btnLabel={"Start your free trial"}
@@ -295,6 +295,7 @@ const Pricing = () => {
           </Text>
         </Box>
       </HStack>
+
       <Box justifyContent={"center"} m={"40px 0px 40px"} mt={"150px"}>
         <Box>
           <Text
@@ -305,13 +306,15 @@ const Pricing = () => {
           >
             Trusted by 18,000 teams from all over the world (and still growing!)
           </Text>
-          <HStack
+          <Grid
+            templateColumns="repeat(6, 1fr)"
+            direction={{xl:"row",sm:"column"}}
             justifyContent={"center"}
             borderBottom={"1px solid #d8d8d8"}
             mt="30px"
             margin={"auto"}
             gap={"60px"}
-            w={"98%"}
+            w={"55%"}
             h={"100px"}
           >
             <Box>
@@ -354,7 +357,7 @@ const Pricing = () => {
                 ></Image>
               </VStack>
             </Box>
-          </HStack>
+          </Grid>
         </Box>
         {/* Book a demo */}
         <Box

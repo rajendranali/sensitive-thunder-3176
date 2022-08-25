@@ -19,7 +19,7 @@ const Nav = () => {
       setScrollClass(false);
     }
   };
-  console.log(scrollclass);
+  // console.log(scrollclass);
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
