@@ -11,9 +11,33 @@ import {
   Input,
   HStack,
   SimpleGrid,
+  Center,
 } from "@chakra-ui/react";
+import React,{ useState }  from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
+
 export default function Feature() {
+  const [one,setOne]=useState(true)
+  const [two,setTwo]=useState(false)
+  const [three,setThree]=useState(false)
+  const handleOne=(e)=>{
+    console.log("one",one,"two",two,"three",three)
+    setOne(true)
+    setTwo(false)
+    setThree(false)
+  }
+  const handleTwo=(e)=>{
+console.log("one",one,"two",two,"three",three)
+setOne(false)
+setTwo(true)
+setThree(false)
+  }
+  const handleThree=(e)=>{
+    console.log("one",one,"two",two,"three",three)
+    setOne(false)
+    setTwo(false)
+    setThree(true)
+  }
   return (
     <>
       <Container maxW={"7xl"} my={10}>
@@ -155,7 +179,6 @@ export default function Feature() {
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-       
           bg={"gray.100"}
           p={10}
           rounded={10}
@@ -180,7 +203,7 @@ export default function Feature() {
                 rounded={"full"}
                 px={6}
                 height={[8, 12, 16]}
-                w={[80, 160, 200]}
+                w={[40,80, 160, 200]}
                 fontSize={[10, 20, 24]}
                 fontWeight={"semibold"}
                 _hover={"#ffbf00"}
@@ -197,13 +220,128 @@ export default function Feature() {
         />
         <Image
           src="https://cdn-m.timecamp.com/img/greenbranding/greenSmallCircle.svg"
-          mx={[400, 600, 800]}
+          mx={[200,400, 600, 800]}
           mt={-2}
         />
       </Container>
-      <Container maxW={"7xl"}>
-        <Heading fontSize={'4xl'}>One app. A multitude of benefits </Heading>
+     
+        <Center>
+        <Heading fontSize={"4xl"}>One app. A multitude of benefits</Heading>
+        </Center>
+        <Container maxW={"7xl"} >
+        <Stack
+          align={"center"}
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 20, md: 28 }}
+          direction={{ base: "column", md: "row" }}
+        >
+          <Stack flex={1} spacing={{ base: 5, md: 10 }} >
+            <Stack onClick={handleOne} borderLeft={ one?"5px solid #37c266":"none"} p={6 }   boxShadow={one?"xl":"none"} borderRadius={4} w={"90%"} spacing={2}>
+
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: "sm", sm: "md", lg: "lg" }}
+            >
+              <Text as={"span"} fontSize={"2xl"}>
+              Track a team's performance
+              </Text>
+            </Heading>
+            <Text color={"gray.500"}>
+             
+See at a glance how your team is performing and how much time they
+spend on a given project or task.
+            </Text>
+              </Stack>
+
+            <Stack onClick={handleTwo}  borderLeft={ two?"5px solid #37c266":"none"}  boxShadow={two?"xl":"none"} p={4}  w={"90%"} borderRadius={4} spacing={2}>
+
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: "sm", sm: "md", lg: "lg" }}
+            >
+              <Text as={"span"} fontSize={"2xl"}>
+              Track project profitability
+              </Text>
+            </Heading>
+            <Text color={"gray.500"}>
+            
+Is your project still within its budget? What is the profit margin
+across different projects? With TimeCamp, budgeting and billing will
+become easy as pie.
+            </Text>
+              </Stack>
+
+            <Stack onClick={handleThree}  borderLeft={ three?"5px solid #37c266":"none"}  boxShadow={three?"xl":"none"} p={4} borderRadius={4} w={"90%"} spacing={2}>
+
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: "sm", sm: "md", lg: "lg" }}
+            >
+              <Text as={"span"} fontSize={"2xl"}>
+              Track your productivity
+              </Text>
+            </Heading>
+            <Text color={"gray.500"}>
+             
+Get your team’s proof of work. Measure their productivity and the
+time spent on different apps and websites.
+            </Text>
+              </Stack>
+            </Stack>
+          <Flex
+            flex={1}
+            justify={"center"}
+            align={"center"}
+            position={"relative"}
+            w={"full"}
+          >
+            <Box
+              position={"relative"}
+              rounded={"2xl"}
+              boxShadow={"xl"}
+              width={"full"}
+            >
+              <Image
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                w={"100%"}
+                h={"100%"}
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/features/performance.jpg"
+                }
+                display={one?"block":"none"}
+              />
+              <Image
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                w={"100%"}
+                h={"100%"}
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/features/profitability.jpg"
+                }
+                display={two?"block":"none"}
+              />
+              <Image
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                w={"100%"}
+                h={"100%"}
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/features/productivity.jpg"
+                }
+                display={three?"block":"none"}
+              />
+            </Box>
+          </Flex>
+        </Stack>
       </Container>
+     
     </>
   );
 }
