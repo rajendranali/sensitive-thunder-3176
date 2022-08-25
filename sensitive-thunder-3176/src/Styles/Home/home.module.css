@@ -12,10 +12,77 @@
 
 .image_div {
   width: 100%;
-  height: 500px;
+  height: 750px;
 
   background-size: 100% 100%;
   background-image: url("https://cdn-m.timecamp.com/img/backgroundTop.webp");
+}
+.above_imagediv {
+  width:99%;
+  height: 100%;
+
+display: flex;
+}
+.happy_box{
+  width: 45%;
+height: 85%;
+border: 3px solid green;
+margin-left: 50px;
+margin-top: 60px;
+background-color: #ffffff;
+}
+.review_company{
+  width:90%;
+  height: 70%;
+
+margin: auto;
+margin-top: 20px;
+}
+.review_company h2{
+  text-align: center;
+  color: #1b1b20;
+  font-family: "nunito sans", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.review_company p{
+text-align: center;
+margin-top: 20px;
+color: #1b1b20;
+font-family: "nunito sans", sans-serif;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+padding: 0 2rem;
+margin-bottom: 3rem;
+}
+.logo_raindroup{
+width: 23%;
+height: 23%;
+margin: auto;
+}
+.circle_image{
+  width:15%;
+
+  height:100px;
+ margin: auto;
+ background-image: url("https://cdn-m.timecamp.com/img/person.jpg");
+ background-size: 100% 100%;
+ margin-top: -50px;
+ border-radius: 50%;
+} 
+.outer{
+  width: 48%;
+  height: 42%;
+
+  margin-left: 50px;
+  margin-top: 320px;
+  margin-right: 20px;
+background-color: #ffffff;
+
+
 }
 @media screen and (max-width: 940px) {
   .image_div {

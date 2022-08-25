@@ -51,6 +51,7 @@ const Nav = () => {
             <Link to="/feature" onClick={closeMenu}>
               Feature
             </Link>
+   
           </li>
           <li className="nav-item">
             <Link to="/pricing" onClick={closeMenu}>
@@ -63,7 +64,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Blog" onClick={closeMenu}>
+            <Link to="/Blog" onClick={closeMenu} style={{color:"#1B1B20"}}>
               Blog
             </Link>
           </li>
