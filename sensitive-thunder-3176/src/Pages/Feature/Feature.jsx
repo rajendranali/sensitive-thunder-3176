@@ -847,6 +847,312 @@ export default function Feature() {
           </Flex>
         </Stack>
       </Container>
+      <Center>
+        <Heading>Customer Story</Heading>
+      </Center>
+      <Container
+        maxW={"7xl"}
+        my={10}
+        border={"1px solid grey"}
+        borderRadius={2}
+      >
+        <Flex direction={["column", "row"]} gap={4}>
+          <Box>
+            <Image src="https://cdn-m.timecamp.com/img/customer-stories/saatchi/saatchi.jpg" />
+          </Box>
+          <Stack spacing={2} p={4} w={"90%"}>
+            <Text fontWeight={"semibold"} fontSize={["lg", "md", "2xl", "4xl"]}>
+              It’s very simple to use, especially fueling it with Trello, it’s
+              key here, we wanted to maintain our workflow and not jump over to
+              other pieces of software to capture the time data.
+            </Text>
+            <Text>
+              <Text as={"span"} fontWeight={"semibold"}>
+                {" "}
+                Mike Spencer
+              </Text>{" "}
+              , M&C Saatchi
+            </Text>
+          </Stack>
+        </Flex>
+      </Container>
+      <Center textAlign={"center"} mt={40}>
+        <Text fontWeight={"light"}>
+          Distribute the work on projects and tasks and
+          <Text as={"span"} fontWeight={"semibold"}>
+            {" "}
+            track the progress{" "}
+          </Text>{" "}
+          performed by your team. Bill your time on any particular tasks and
+          make sure you will
+          <Text as={"span"} fontWeight={"semibold"}>
+            {" "}
+            never exceed your budget.
+          </Text>
+        </Text>
+      </Center>
+      <Container maxWidth={'9xl'} bgColor={"gray.100"} px={[4,8,16,32,64]}>
+        <Stack
+          align={"center"}
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 20, md: 28 }}
+          direction={{ base: "column", md: "row" }}
+        >
+          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+            <Stack spacing={"2"} w={"90%"}>
+              <Text as={"span"} color={"green.400"} fontSize={"sm"}>
+                Time tracking integrations
+              </Text>
+              <Heading
+                lineHeight={1}
+                fontWeight={700}
+                fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+              >
+                <Text as={"span"} fontSize={"3xl"}>
+                  Easy and quick integration with more than 100 apps and work
+                  tools
+                </Text>
+              </Heading>
+              <Text color={"gray.500"}>
+                TimeCamp works great alongside with all of the most popular work
+                management tools. Now, you can also track time directly from
+                your go-to apps such as Trello or Asana thanks to our Chrome
+                extension.
+              </Text>
+              <Text color={"gray.500"}>
+                Maintain your current workflow and connect TimeCamp, the best
+                time tracking software, with your currently used apps.
+              </Text>
+            </Stack>
+
+            <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
+              <Button
+                rounded={"full"}
+                size={"lg"}
+                fontSize={"sm"}
+                px={10}
+                w={80}
+                variant={"ghost"}
+                color={"green"}
+              >
+                Check Integrations
+              </Button>
+            </Stack>
+          </Stack>
+
+          <SimpleGrid
+            p={10}
+            justifyContent={"center"}
+            columns={[2, 3, 3]}
+            spacing={[10,20]}
+          >
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/slack.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/asana.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/trello.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/ical.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/podio.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/quickbooks.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/jira.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/todoist.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/outlookcalendar.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/googlecalendar.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/smartsheet.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+            <Box
+              bgColor={"white"}
+              boxShadow={"lg"}
+              w={"100px"}
+              h={"100px"}
+              border={"none"}
+              p={2}
+              borderRadius={24}
+            >
+              <Image
+                src={
+                  "https://cdn-m.timecamp.com/img/greenbranding/integrations/xero.png"
+                }
+                w={"50px"}
+                m={4}
+              />
+            </Box>
+          </SimpleGrid>
+        </Stack>
+      </Container>
     </>
   );
 }
