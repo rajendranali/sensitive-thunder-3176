@@ -9,6 +9,7 @@ import Home from "./Home/Home";
 import Integration from "./Integration/Integration";
 import Pricing from "./Pricing/Pricing";
 import Signin from "./Signin/Signin";
+import Tags from "./Tags/Tags";
 
 const Allroutes = () => {
   return (
@@ -22,6 +23,7 @@ const Allroutes = () => {
       <Route path="/signin" element={<Signin/>}></Route>
       <Route path="/bookdemo" element={<Bookdemo/>}></Route>
       <Route path="/blog" element={<Blog/>}></Route>
+      <Route path="/app/tags" element={<Tags/>}></Route>
     </Routes>
     <Footer/>
     </>
