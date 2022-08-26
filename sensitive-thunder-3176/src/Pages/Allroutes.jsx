@@ -19,9 +19,9 @@ import Tags from "./TimeSheet/Tags";
 import Users from "./TimeSheet/Users";
 import Attendance from "./TimeSheet/Attendance";
 import Approvals from "./TimeSheet/Approvals";
-
 import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
+
 
 const Allroutes = () => {
   return (
@@ -50,6 +50,7 @@ const Allroutes = () => {
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
       <Footer />
+   
     </>
   );
 };
