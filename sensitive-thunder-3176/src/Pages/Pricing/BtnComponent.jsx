@@ -9,19 +9,6 @@ const BtnComponent = ({ label, sizeGiven, status, setActive }) => {
   // const isAuth = useSelector((state) => state.isAuth);
   const isAuth = true;
 
-  const handleBtnClick = () => {
-    if (label === "Get Started Today" && isAuth) {
-      return navigate("/dashboard");
-    } else if (label === "Learn More") {
-      return navigate("/enterprise");
-    } else if (isAuth) {
-      return navigate("/payment");
-    } else if (!isAuth) {
-      navigate("/auth/signup");
-    } else if (label === "Compare Plan") {
-      navigate("/pricing");
-    }
-  };
   return (
     <Button
       _hover={{ backgroundColor: "#1da44c", color: "white" }}
@@ -46,7 +33,6 @@ const BtnComponent = ({ label, sizeGiven, status, setActive }) => {
       }
       size={sizeGiven === 100 ? "100%" : "lg"}
       className={status === "active" ? styles.activeBtn : ""}
-      onClick={handleBtnClick}
       w={"100%"}
     >
       {label}
