@@ -5,6 +5,8 @@ import {FiUserPlus} from "react-icons/fi"
 import {Link} from "react-router-dom"
 import styles from "./user.module.css"
 import GuestInvite from './modal/GuestInvite'
+import CreateGroup from './modal/CreateGroup'
+import Email from "./modal/Email"
 function User() {
   return (
     <div>
@@ -17,8 +19,8 @@ function User() {
            <Flex>
            
             <GuestInvite/>
-            <GuestInvite/>
-            <GuestInvite/>
+            <CreateGroup/>
+            <Email/>
            
            </Flex>
            </Box>
