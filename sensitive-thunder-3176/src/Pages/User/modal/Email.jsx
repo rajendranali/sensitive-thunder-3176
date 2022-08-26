@@ -7,7 +7,7 @@ const Email= () => {
     return (
       <>
         
-        <Button w={150} borderRadius="10px"  color="black" onClick={onOpen}><HiOutlineMail/>Create Group</Button>
+        <Button w={50} borderRadius="10px"  color="black" onClick={onOpen}><HiOutlineMail/></Button>
         <Modal
           isCentered
           onClose={onClose}
