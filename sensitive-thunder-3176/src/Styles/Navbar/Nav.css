@@ -100,9 +100,7 @@ ul {
   .nav-item {
     margin: 1rem 0;
   }
-  .btn_navbar {
-    display: none;
-  }
+ 
   .header .navbar img {
     width: 150px;
   }
@@ -113,13 +111,16 @@ ul {
   .fa_timescss {
     color: black;
   }
+  .buttn_navbar{
+    display: none;
+  }
 }
 @media screen and (max-width: 400px) {
   .header .navbar img {
     width: 100px;
     height: 100px;
   }
-  .btn_navbar {
+  .buttn_navbar{
     display: none;
   }
 

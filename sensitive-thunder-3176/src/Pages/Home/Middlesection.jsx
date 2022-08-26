@@ -1,9 +1,52 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
 import a from "../../Styles/Home/home.module.css";
+import b from "../../Styles/Home/logo.module.css";
 const Middlesection = () => {
   return (
     <div className={a.image_container}>
+      <div className={b.smallscreen_div}>
+      <div className={b.main_div}>
+      <div className={b.small_div}>
+        <div className={b.text_div1}>
+          <h1>Free time tracking software</h1>
+        </div>
+        <div className={b.text_div}>
+          <h2>Happy to see you</h2>
+        </div>
+        <div className={b.text_div}>
+          <h2>again!</h2>
+        </div>
+        <div className={b.text_div}>
+          <h2>Book TimeCamp</h2>
+        </div>
+        <div className={b.text_div}>
+          <h2>set-up call</h2>
+        </div>
+        <div className={b.text_div1}>
+          <h1>✓ Showing how TimeCamp works in 15 minutes</h1>
+        </div>
+        <div className={b.text_div1}>
+          <h1>✓ Best practices from 5000+ implementations</h1>
+        </div>
+        <div className={b.text_div1}>
+          <h1>✓ Help with dedicated setup</h1>
+        </div>
+        <div className={b.btn_reveiw}>
+          <div className={b.buttan_chakra}>
+            <Button className={b.btn}>Book a demo</Button>
+          </div>
+          <h4 className={b.text}>or</h4>
+          <div className={b.buttan_chakra}>
+            <Button className={b.btn}>Go to App</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+      </div>
+
       <div className={a.image_div}>
         <div className={a.above_imagediv}>
           <div className={a.happy_box}>
@@ -17,14 +60,14 @@ const Middlesection = () => {
               <div className={a.text_div}>
                 <h2>again!</h2>
               </div>
-              <div className={a.text_div} >
+              <div className={a.text_div}>
                 <h2>Book TimeCamp</h2>
               </div>
               <div className={a.text_div}>
                 <h2>set-up call</h2>
               </div>
-              <div className={a.text_div1} >
-                <h1 >✓ Showing how TimeCamp works in 15 minutes</h1>
+              <div className={a.text_div1}>
+                <h1>✓ Showing how TimeCamp works in 15 minutes</h1>
               </div>
               <div className={a.text_div1}>
                 <h1>✓ Best practices from 5000+ implementations</h1>
@@ -32,13 +75,15 @@ const Middlesection = () => {
               <div className={a.text_div1}>
                 <h1>✓ Help with dedicated setup</h1>
               </div>
-            <div className={a.btn_reveiw}>
-              <div><Button className={a.btn}>Book a demo</Button></div>
-              <h4 className={a.text}>or</h4>
-              <div><Button className={a.btn}>Go to App</Button></div>
-            
-            
-            </div>
+              <div className={a.btn_reveiw}>
+                <div>
+                  <Button className={a.btn}>Book a demo</Button>
+                </div>
+                <h4 className={a.text}>or</h4>
+                <div>
+                  <Button className={a.btn}>Go to App</Button>
+                </div>
+              </div>
             </div>
           </div>
           <div className={a.outer}>

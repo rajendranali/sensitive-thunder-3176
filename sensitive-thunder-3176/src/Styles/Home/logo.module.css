@@ -1,0 +1,160 @@
+.smallscreen_div{
+  display: none;
+background-color: #0a8c37;
+}
+
+@media screen and (max-width: 1200px) {
+  .smallscreen_div {
+    display: inline;
+    width: 70%;
+    margin: auto;
+
+    height: auto;
+  }
+  .main_div {
+    width: 50%;
+    height: auto;
+
+    margin: auto;
+    text-align: center;
+  }
+  .small_div {
+    width: 70%;
+    height: auto;
+
+    margin: auto;
+  }
+
+  .inner_div {
+    width: 80%;
+    height: 90%;
+
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .text_div {
+    width: 90%;
+    height: 11%;
+  }
+  .text_div h1 {
+    font-family: "nunito sans", sans-serif;
+    color: #1b1b20;
+    line-height: 15px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .text_div h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 30px;
+    color: #1b1b20;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  .text_div1 {
+    width: 90%;
+    height: 7%;
+  }
+  .btn_reveiw {
+    width: 70%;
+    height: 5%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .btn_reveiw .btn {
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 100px;
+    background-color: #1da44c;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "nunito sans", sans-serif;
+  }
+  .btn_reveiw .btn:hover {
+    background-color: #0a8c37;
+  }
+  .btn_reveiw .text {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .smallscreen_div {
+    width: 90%;
+    margin: auto;
+    height: 800px;
+  }
+  .main_div {
+    width: 90%;
+    height: auto;
+
+    margin: auto;
+    text-align: center;
+  }
+  .small_div {
+    width: 95%;
+    height: 88%;
+
+    margin: auto;
+  }
+
+  .inner_div {
+    width: 80%;
+    height: 90%;
+
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .text_div {
+    width: 90%;
+    height: 11%;
+  }
+  .text_div h1 {
+    font-family: "nunito sans", sans-serif;
+    color: #1b1b20;
+    line-height: 15px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .text_div h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 30px;
+    color: #1b1b20;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  .text_div1 {
+    width: 90%;
+    height: 7%;
+  }
+  .btn_reveiw {
+    width: 80%;
+    height: 5%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .btn_reveiw .btn {
+    width: 100px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 50px;
+    background-color: #1da44c;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "nunito sans", sans-serif;
+  }
+  .btn_reveiw .btn:hover {
+    background-color: #0a8c37;
+  }
+  .btn_reveiw .text {
+    margin-top: 40px;
+  }
+ 
+}

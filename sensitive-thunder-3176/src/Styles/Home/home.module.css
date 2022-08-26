@@ -1,13 +1,12 @@
 .container {
-  border: 2px solid teal;
   width: 100%;
-  height: 1000px;
+  height: auto;
 }
 
 /* Midlle Section Css */
 .image_container {
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 
 .image_div {
@@ -90,7 +89,6 @@
   margin-top: 50px;
 }
 .text_div {
-
   width: 90%;
   height: 11%;
 }
@@ -104,42 +102,54 @@
 }
 .text_div h2 {
   font-family: "Lato", sans-serif;
-font-size: 52px;
+  font-size: 52px;
   color: #1b1b20;
   font-style: normal;
   font-weight: 700;
   line-height: 57px;
 }
-.text_div1{
- 
+.text_div1 {
   width: 90%;
   height: 7%;
 }
-.btn_reveiw{
+.btn_reveiw {
   width: 99%;
   height: 15%;
 
-display: flex;
-justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
-.btn_reveiw .btn{
-  width:200px;
-  height:50px;
+.btn_reveiw .btn {
+  width: 200px;
+  height: 50px;
   margin-top: 30px;
   border-radius: 100px;
-  background-color: #1DA44C;
-  color:#ffffff;
+  background-color: #1da44c;
+  color: #ffffff;
   font-size: 16px;
   font-family: "nunito sans", sans-serif;
 }
-.btn_reveiw .btn:hover{
-  background-color: #0a8c37
+.btn_reveiw .btn:hover {
+  background-color: #0a8c37;
 }
-.btn_reveiw .text{
+.btn_reveiw .text {
   margin-top: 40px;
 }
-@media screen and (max-width: 940px) {
+
+
+  
+@media screen and (max-width:1200px)  {
   .image_div {
     display: none;
   }
+  .image_container{
+    padding-top: 50px;;
+  }
+}
+@media screen and (max-width:800px)  {
+ 
+  .image_container{
+    padding-top: 50px;
+  }
+
 }
