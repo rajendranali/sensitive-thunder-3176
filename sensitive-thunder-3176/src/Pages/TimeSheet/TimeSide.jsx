@@ -75,7 +75,11 @@ export default function TimeSide({ children }) {
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
+
+      {/* {LinkItems.map((i)=>( */}
       <MobileNav onOpen={onOpen} />
+      {/* ))} */}
+
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
@@ -145,7 +149,7 @@ const NavItem = ({ icon, p, children, ...rest }) => {
   );
 };
 
-const MobileNav = ({ onOpen, ...rest }) => {
+const MobileNav = ({ onOpen, name, ...rest }) => {
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -160,7 +164,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
     >
       <Box mr={"1230px"}>
         <Text fontWeight={500} fontSize={18}>
-          Timesheet
+          {/* TODO  */}
+          name
         </Text>
       </Box>
       <IconButton
