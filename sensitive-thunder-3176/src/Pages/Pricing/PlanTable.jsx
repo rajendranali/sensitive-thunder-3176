@@ -107,6 +107,7 @@ const PlanTable = () => {
                     color={"#3c91e6"}
                     fontWeight={"700"}
                     fontSize="17px"
+                    
                   >
                     Enterprise
                   </Text>

@@ -1,6 +1,4 @@
-.btnGetStarted:hover {
-  color: white;
-}
+
 .stybillActive {
   background-color: #25cf60;
   color: white !important;
@@ -10,8 +8,8 @@
   color: gray;
 }
 .activeBtn {
-  background-color: #5846f6 !important;
-  color: white !important;
+  background-color: white !important;
+  color: #25cf60 !important;
 }
 .btnSpanActive {
   font-weight: 600;
