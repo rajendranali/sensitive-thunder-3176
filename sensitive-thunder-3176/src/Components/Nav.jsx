@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../Styles/Navbar/Nav.css";
 import { Button } from "@chakra-ui/react";
-import { useContext } from "react";
-import { Condi } from "../Context/Navbarcondition";
+
+
 const Nav = () => {
-  const {setNav}=useContext(Condi)
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 

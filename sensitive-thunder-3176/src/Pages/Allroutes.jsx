@@ -1,20 +1,19 @@
 import React from "react";
-import { useContext } from "react";
+
 import { Route, Routes } from "react-router-dom";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
-import { Condi } from "../Context/Navbarcondition";
+
+
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
 import Feature from "./Feature/Feature";
 import FinalHome from "./Home/FinalHome";
-import Home from "./Home/Home";
+
 import Integration from "./Integration/Integration";
 import Pricing from "./Pricing/Pricing";
 import Signin from "./Signin/Signin";
 
 const Allroutes = () => {
-  const value=useContext(Condi)
+
 
   return (
     <>
