@@ -1,11 +1,11 @@
 
 import React from 'react'
 import {HiOutlineMail} from "react-icons/hi"
-import {Button,ModalOverlay,Modal,ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter,useDisclosure} from "@chakra-ui/react"
+import {Button,ModalOverlay,Modal,ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter,useDisclosure,Box} from "@chakra-ui/react"
 const Email= () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-      <>
+      <Box marginLeft={5}>
         
         <Button w={50} borderRadius="10px"  color="black" onClick={onOpen}><HiOutlineMail/></Button>
         <Modal
@@ -29,7 +29,7 @@ const Email= () => {
             </ModalFooter>
           </ModalContent>
         </Modal>
-      </>
+      </ Box>
     )
 }
 

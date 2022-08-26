@@ -6,6 +6,12 @@
 }
 .userBox{
   border: 1px solid black;
-  border-radius: 5px;
-  width: 900px;
+  border-radius: 10px;
+  width: 95%;
+  margin-top: 50px;
+  height: auto;
+}
+.accountbtn{
+   font-size: 20px;
+   
 }
