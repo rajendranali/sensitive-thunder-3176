@@ -9,21 +9,47 @@ import Home from "./Home/Home";
 import Integration from "./Integration/Integration";
 import Pricing from "./Pricing/Pricing";
 import Signin from "./Signin/Signin";
+import TimeSide from "./TimeSheet/TimeSide";
+import TimeSheet from "./TimeSheet/TimeSheet";
+import Dashboard from "./TimeSheet/Dashboard";
+import Reports from "./TimeSheet/Reports";
+import Computer from "./TimeSheet/Computer";
+import Projects from "./TimeSheet/Projects";
+import Tags from "./TimeSheet/Tags";
+import Users from "./TimeSheet/Users";
+import Attendance from "./TimeSheet/Attendance";
+import Approvals from "./TimeSheet/Approvals";
+
+import Clients from "./TimeSheet/Clients";
+import Invoices from "./TimeSheet/Invoices";
 
 const Allroutes = () => {
   return (
     <>
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/feature" element={<Feature/>}></Route>
-      <Route path="/pricing" element={<Pricing/>}></Route>
-      <Route path="/integration" element={<Integration/>}></Route>
-      <Route path="/signin" element={<Signin/>}></Route>
-      <Route path="/bookdemo" element={<Bookdemo/>}></Route>
-      <Route path="/blog" element={<Blog/>}></Route>
-    </Routes>
-    <Footer/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/feature" element={<Feature />}></Route>
+        <Route path="/pricing" element={<Pricing />}></Route>
+        <Route path="/integration" element={<Integration />}></Route>
+        <Route path="/signin" element={<Signin />}></Route>
+        <Route path="/bookdemo" element={<Bookdemo />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/timesheet" element={<TimeSide />}></Route>
+
+        <Route path="/timesheet/timesheet" element={<TimeSheet />}></Route>
+        <Route path="/timesheet/dashboard" element={<Dashboard />}></Route>
+        <Route path="/timesheet/reports" element={<Reports />}></Route>
+        <Route path="/timesheet/computertime" element={<Computer />}></Route>
+        <Route path="/timesheet/projects" element={<Projects />}></Route>
+        <Route path="/timesheet/tags" element={<Tags />}></Route>
+        <Route path="/timesheet/users" element={<Users />}></Route>
+        <Route path="/timesheet/attendance" element={<Attendance />}></Route>
+        <Route path="/timesheet/approvals" element={<Approvals />}></Route>
+        <Route path="/timesheet/clients" element={<Clients />}></Route>
+        <Route path="/timesheet/invoices" element={<Invoices />}></Route>
+      </Routes>
+      <Footer />
     </>
   );
 };
