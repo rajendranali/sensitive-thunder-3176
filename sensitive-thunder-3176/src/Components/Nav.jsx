@@ -19,7 +19,7 @@ const Nav = () => {
       setScrollClass(false);
     }
   };
-  // console.log(scrollclass);
+
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -74,6 +74,9 @@ const Nav = () => {
             </Link>
           </li>
         </ul>
+        <div className="buttn_navbar">
+
+  
         <Button
           className="btn_navbar"
           onClick={navigatortoothersite}
@@ -86,6 +89,7 @@ const Nav = () => {
         >
           Go To App
         </Button>
+        </div>
       </nav>
     </div>
   );
