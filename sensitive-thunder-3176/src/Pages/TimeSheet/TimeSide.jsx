@@ -47,6 +47,7 @@ const LinkItems = [
   { name: "Computer Time", icon: FaLaptop, path: "computertime" },
   { name: "Projects", icon: FaFolderOpen, path: "projects" },
   { name: "Tags", icon: FaTags, path: "tags" },
+  { name: "Users", icon: FaTags, path: "users" },
   { name: "Attendance", icon: FaCheckSquare, path: "attendance" },
   { name: "Timesheet Approvals", icon: FaClipboard, path: "approvals" },
   { name: "Clients", icon: FaBriefcase, path: "clients" },
