@@ -1,11 +1,13 @@
 import React from "react";
+
 import { Route, Routes } from "react-router-dom";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
+
+
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
 import Feature from "./Feature/Feature";
-import Home from "./Home/Home";
+import FinalHome from "./Home/FinalHome";
+
 import Integration from "./Integration/Integration";
 import Pricing from "./Pricing/Pricing";
 import Signin from "./Signin/Signin";
@@ -25,8 +27,11 @@ import Invoices from "./TimeSheet/Invoices";
 
 
 const Allroutes = () => {
+
+
   return (
     <>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -51,6 +56,7 @@ const Allroutes = () => {
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
       <Footer />
+
    
     </>
   );

@@ -3,7 +3,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../Styles/Navbar/Nav.css";
 import { Button } from "@chakra-ui/react";
+
+
 const Nav = () => {
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -28,7 +31,12 @@ const Nav = () => {
     };
   }, []);
 
-  const closeMenu = () => setClick(false);
+  const closeMenu = () => {
+    setClick(false);
+  };
+// const change=()=>{
+// setNav(true)
+// }
   const navigatortoothersite = () => {};
   return (
     <div className="header" id={scrollclass ? "headercon" : ""}>
@@ -51,7 +59,6 @@ const Nav = () => {
             <Link to="/feature" onClick={closeMenu}>
               Feature
             </Link>
-   
           </li>
           <li className="nav-item">
             <Link to="/pricing" onClick={closeMenu}>
@@ -64,31 +71,29 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Blog" onClick={closeMenu} style={{color:"#1B1B20"}}>
+            <Link to="/Blog" onClick={closeMenu} style={{ color: "#1B1B20" }}>
               Blog
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/signin" onClick={closeMenu}>
+            <Link to="/signin" onClick={onclose}>
               Sign in
             </Link>
           </li>
         </ul>
         <div className="buttn_navbar">
-
-  
-        <Button
-          className="btn_navbar"
-          onClick={navigatortoothersite}
-          backgroundColor={"#F7B801"}
-          borderRadius={"45px"}
-          color={"#ffffff"}
-          size="lg"
-          variant="solid"
-          _hover={{ bg: "#c79603;" }}
-        >
-          Go To App
-        </Button>
+          <Button
+            className="btn_navbar"
+            onClick={navigatortoothersite}
+            backgroundColor={"#F7B801"}
+            borderRadius={"45px"}
+            color={"#ffffff"}
+            size="lg"
+            variant="solid"
+            _hover={{ bg: "#c79603;" }}
+          >
+            Go To App
+          </Button>
         </div>
       </nav>
     </div>
