@@ -44,7 +44,7 @@ const Allroutes = () => {
           path="/blog"
           element={
             <AuthReq>
-              <Blog />{" "}
+              <Blog />
             </AuthReq>
           }
         ></Route>
