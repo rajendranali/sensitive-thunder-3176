@@ -23,13 +23,12 @@ import Attendance from "./TimeSheet/Attendance";
 import Approvals from "./TimeSheet/Approvals";
 import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
-import Home from "./Home/Home";
-import Req from "./Signin/Req";
+
 import Finalinte from "./Integration/Finalinte";
 import FinalFeature from "./Feature/FinalFeature";
 import Finalprice from "./Pricing/Finalprice";
+import AuthReq from "./Signin/AuthReq";
+import Logout from "./Signin/Logout";
 
 const Allroutes = () => {
   return (
@@ -41,16 +40,16 @@ const Allroutes = () => {
         <Route path="/integration" element={<Finalinte />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/bookdemo" element={<Bookdemo />}></Route>
-        <Route path="/blog" element={<Blog />}></Route>
-
         <Route
-          path="/timesheet"
+          path="/blog"
           element={
-            <Req>
-              <TimeSide />
-            </Req>
+            <AuthReq>
+              <Blog />{" "}
+            </AuthReq>
           }
         ></Route>
+        <Route path="/Logout" element={<Logout />}></Route>
+        <Route path="/timesheet" element={<TimeSide />}></Route>
 
         <Route path="/timesheet/timesheet" element={<TimeSheet />}></Route>
         <Route path="/timesheet/dashboard" element={<Dashboard />}></Route>

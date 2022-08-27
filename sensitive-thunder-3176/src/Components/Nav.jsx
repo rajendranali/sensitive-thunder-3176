@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import "../Styles/Navbar/Nav.css";
 import { Button } from "@chakra-ui/react";
 
-
+import {useSelector} from "react-redux"
 const Nav = () => {
+const data=useSelector(store=>store.AuthReducer.isAuth)
 
+console.log(data,"navdat");
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -76,9 +78,12 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav-item" id="signin">
-            <Link to="/signin" onClick={onclose}>
+            {!data?  <Link to="/signin" onClick={onclose}>
               Sign in
-            </Link>
+            </Link>:<Link to="/Logout" onClick={onclose}>
+          Log out
+            </Link>}
+          
           </li>
         </ul>
         <div className="buttn_navbar">
