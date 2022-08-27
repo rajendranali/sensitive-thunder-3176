@@ -57,18 +57,22 @@ const TimeSheet = () => {
   let day = days[d.getDay()];
   let date = d.getDate();
   let monthName = months[d.getMonth()];
+  let year = d.getFullYear();
 
   const refreshData = () => {
     dispatch(getTasks());
   };
 
   const handleAddTask = () => {
+    const curDate = `${monthName} ${date}, ${year}`;
+
     if (task) {
       const payload = {
         name: task,
         note: note,
+        curDate: curDate,
       };
-
+      
       dispatch(addTask(payload)).then((r) => dispatch(getTasks(r)));
     }
   };
@@ -89,8 +93,9 @@ const TimeSheet = () => {
   useEffect(() => {
     dispatch(getTasks());
   }, []);
-  console.log(tasks);
-
+  // console.log(tasks);
+  //
+  // console.log(monthName, date, year);
   return (
     <div>
       <TimeSide />
