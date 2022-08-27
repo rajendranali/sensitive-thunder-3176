@@ -2,7 +2,6 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
 import Feature from "./Feature/Feature";
@@ -24,14 +23,14 @@ import Attendance from "./TimeSheet/Attendance";
 import Approvals from "./TimeSheet/Approvals";
 import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
-
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import Home from "./Home/Home";
+import Req from "./Signin/Req";
 
 const Allroutes = () => {
-
-
   return (
     <>
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -41,7 +40,15 @@ const Allroutes = () => {
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/bookdemo" element={<Bookdemo />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/timesheet" element={<TimeSide />}></Route>
+
+        <Route
+          path="/timesheet"
+          element={
+            <Req>
+              <TimeSide />
+            </Req>
+          }
+        ></Route>
 
         <Route path="/timesheet/timesheet" element={<TimeSheet />}></Route>
         <Route path="/timesheet/dashboard" element={<Dashboard />}></Route>
@@ -56,8 +63,6 @@ const Allroutes = () => {
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
       <Footer />
-
-   
     </>
   );
 };
