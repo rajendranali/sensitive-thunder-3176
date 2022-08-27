@@ -5,7 +5,7 @@ import {GrAdd } from 'react-icons/gr'
 import { useSelector } from 'react-redux'
 const TagCard = ({tagName,key}) => {
   const tags = useSelector((state) => state.AppReducer.tags);
-  console.log(tags)
+  // console.log(tags)
 
   return (
     <Box key={key} m={4}  p={4} rounded={8} bgColor={'gray.100'}>
