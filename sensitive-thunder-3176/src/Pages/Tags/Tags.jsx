@@ -1,41 +1,35 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Input,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import TagCard from "./TagCard";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTags, postTags } from "../../Redux/AppReducer/action";
 const Tags = () => {
   const tags = useSelector((state) => state.AppReducer.tags);
+
   const [tag,setTag]=useState("")
   const [create,setCreate]= useState(false)
-console.log(tags)
+// console.log(tags)
+
+
   const dispatch = useDispatch();
-  const handleAddTag=()=>{
-    if(tag.length>0){
-      
-        const payload = {
-          name: tag,
-          
-        }
-     dispatch(postTags(payload))
-     dispatch(getTags()); 
+  const handleAddTag = () => {
+    if (tag.length > 0) {
+      const payload = {
+        name: tag,
+      };
+      dispatch(postTags(payload));
+      dispatch(getTags());
     }
-  }
+  };
   useEffect(() => {
     dispatch(getTags());
   }, []);
-  const inputCreateTag=()=>{
-setCreate(true)
-  }
-  const cancelCreateTag=()=>{
-setCreate(false)
-  }
+  const inputCreateTag = () => {
+    setCreate(true);
+  };
+  const cancelCreateTag = () => {
+    setCreate(false);
+  };
   return (
     <Box ml={10}>
       <Box w={"500px"}>
@@ -50,8 +44,16 @@ setCreate(false)
           >
             + Add tag list
           </Button>
-          <Flex   display={create?"block":"none"} >
-            <Input m={2} w={"40%"} placeholder="Enter Tag Name" value={tag.name} onChange={(e)=>{setTag(e.target.value)}}/>
+          <Flex display={create ? "block" : "none"}>
+            <Input
+              m={2}
+              w={"40%"}
+              placeholder="Enter Tag Name"
+              value={tag.name}
+              onChange={(e) => {
+                setTag(e.target.value);
+              }}
+            />
             <Button
               color={"white"}
               bgColor={"green.400"}
@@ -81,13 +83,14 @@ setCreate(false)
           </Text>
         </Stack>
         {tags.length > 0 &&
-                tags.map((tag) => <TagCard tagName={tag.name} key={tag.id} />)}
-        
+          tags.map((tag) => (
+            <TagCard id={tag.id} tagName={tag.name} key={tag.id} />
+          ))}
+
         <hr />
         <Button my={10} color={"white"} bgColor={"green.400"} _hover={"green"}>
           Save settings
         </Button>
-   
       </Box>
     </Box>
   );

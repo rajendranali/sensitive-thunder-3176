@@ -88,10 +88,10 @@ export default function TimeSide({ children }) {
 }
 
 const SidebarContent = ({ onClose, ...rest }) => {
-  const navigate=useNavigate()
-  const handleclick=()=>{
-navigate("/")
-  }
+  const navigate = useNavigate();
+  const handleclick = () => {
+    navigate("/");
+  };
   return (
     <Box
       transition="3s ease"
@@ -147,7 +147,7 @@ const NavItem = ({ icon, p, children, ...rest }) => {
           as={icon}
         />
       )}
-      <Link activeClass="activeClass" to={`/timesheet/${p}`} smooth={true}>
+      <Link to={`/timesheet/${p}`} >
         {children}
       </Link>
     </Flex>
@@ -170,7 +170,6 @@ const MobileNav = ({ onOpen, name, ...rest }) => {
       <Box mr={"1230px"}>
         <Text fontWeight={500} fontSize={18}>
           {/* TODO  */}
-          name
         </Text>
       </Box>
       <IconButton
