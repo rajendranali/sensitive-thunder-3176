@@ -8,12 +8,25 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import TagCard from "./TagCard";
-import { useDispatch } from "react-redux";
-import { getTags } from "../../Redux/AppReducer/action";
+import { useDispatch,useSelector } from "react-redux";
+import { getTags, postTags } from "../../Redux/AppReducer/action";
 const Tags = () => {
+  const tags = useSelector((state) => state.AppReducer.tags);
+  const [tag,setTag]=useState("")
   const [create,setCreate]= useState(false)
-
+console.log(tags)
   const dispatch = useDispatch();
+  const handleAddTag=()=>{
+    if(tag.length>0){
+      
+        const payload = {
+          name: tag,
+          
+        }
+     dispatch(postTags(payload))
+     dispatch(getTags()); 
+    }
+  }
   useEffect(() => {
     dispatch(getTags());
   }, []);
@@ -38,13 +51,14 @@ setCreate(false)
             + Add tag list
           </Button>
           <Flex   display={create?"block":"none"} >
-            <Input m={2} w={"40%"} placeholder="Enter Tag Name" />
+            <Input m={2} w={"40%"} placeholder="Enter Tag Name" value={tag.name} onChange={(e)=>{setTag(e.target.value)}}/>
             <Button
               color={"white"}
               bgColor={"green.400"}
               _hover={"green"}
               w={"20%"}
               mx={2}
+              onClick={handleAddTag}
             >
               Create
             </Button>
@@ -66,7 +80,9 @@ setCreate(false)
             can be filtered and grouped by tags.
           </Text>
         </Stack>
-        <TagCard />
+        {tags.length > 0 &&
+                tags.map((tag) => <TagCard tagName={tag.name} key={tag.id} />)}
+        
         <hr />
         <Button my={10} color={"white"} bgColor={"green.400"} _hover={"green"}>
           Save settings

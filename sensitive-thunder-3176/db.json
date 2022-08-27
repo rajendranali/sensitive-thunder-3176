@@ -5,9 +5,14 @@
       "name": "task1",
       "tag": "tag1",
       "note": "note1"
+    },
+    {
+      "name": "task 2",
+      "note": "descp note 2",
+      "id": 2
     }
   ],
-  "user":[
+  "user": [
     {
       "group_id": "1234",
       "user_id": "1231456",
@@ -34,6 +39,20 @@
       "login_time": "2020-12-21 13:43:12",
       "display_name": "Example Name",
       "synch_time": "2020-12-21 14:00:45"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "tag1"
+    },
+    {
+      "name": "tag5",
+      "id": 2
+    },
+    {
+      "name": "tag3",
+      "id": 3
     }
   ]
 }

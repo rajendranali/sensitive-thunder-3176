@@ -22,8 +22,6 @@ import Invoices from "./TimeSheet/Invoices";
 
 
 
-import Footer from "../Components/Footer";
-
 import Req from "./Signin/Req";
 
 import FinalIntegration from "./Integration/FinalIntegration";

@@ -21,9 +21,9 @@ const getTagsFailure = (e) => {
 const getTags = (params) => (dispatch) => {
   dispatch(getMusicRecordsRequest());
   return axios
-    .get("https://app.timecamp.com/third_party/api/tag_list", params)
+    .get("http://localhost:8080/tags", params)
     .then((r) => {
-      console.log(r.data);
+     
       return dispatch(getMusicRecordsSuccess(r));
     })
     .catch((e) => {
@@ -47,14 +47,11 @@ const postTagsFailure = (e) => {
     payload: e,
   };
 };
-const postTags = (params, tag_id) => (dispatch) => {
+const postTags = (params, ) => (dispatch) => {
   dispatch(postMusicRecordsRequest());
   return axios
     .post(
-      `https://app.timecamp.com/third_party/api
-    /tag/${tag_id}`,
-      params
-    )
+      `http://localhost:8080/tags`,params)
     .then((r) => {
       return dispatch(postMusicRecordsSuccess(r));
     })
