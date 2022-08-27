@@ -1,8 +1,15 @@
 import React from 'react'
 
 const Blog = () => {
+  React.useEffect(()=>{
+
+  })
   return (
-    <div>Blog</div>
+    <div>
+
+Blog page
+
+    </div>
   )
 }
 

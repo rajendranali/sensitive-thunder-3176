@@ -10,10 +10,6 @@ import {
 import React from "react";
 
 const Faq = () => {
-
-
-
-
   return (
     <Accordion defaultIndex={[0]} allowToggle>
       <AccordionItem p={2}>

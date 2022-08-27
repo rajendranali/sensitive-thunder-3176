@@ -11,11 +11,13 @@ import {
 import Signtext from "./Signtext";
 import { Getlogin } from "../../Redux/AuthReducer/Action";
 import { useDispatch, useSelector } from "react-redux";
+import {  useNavigate } from "react-router-dom";
 
 const Siginform = () => {
   const [authdata, setAuthdata] = React.useState({ email: "", password: "" });
+const navigate=useNavigate()
+  const data = useSelector((store) => store.AuthReducer);
 
-const data=useSelector(store=>store.AuthReducer)
   const dispatch = useDispatch();
   const googleclick = () => {};
 
@@ -31,12 +33,15 @@ const data=useSelector(store=>store.AuthReducer)
     } else {
       alert("Invalid Feild");
     }
+ 
   };
-
-
-
-
-
+React.useEffect(()=>{
+console.log(data.isAuth);
+if(data.isAuth){
+  console.log("homepage")
+  navigate("/timesheet/timesheet")
+ }
+},[data.isAuth])
   return (
     <div className="container_form">
       <div className="text">
