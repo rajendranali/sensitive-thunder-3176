@@ -1,18 +1,47 @@
 import React from "react";
 import "../../Styles/Sign/Sign.css";
-import { Button, Center, Heading, Input, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Center,
+  FormControl,
+  Heading,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import Signtext from "./Signtext";
+import { Getlogin } from "../../Redux/AuthReducer/Action";
+import { useDispatch, useSelector } from "react-redux";
 
 const Siginform = () => {
-  const googleclick = () => {
-    console.log("zaki");
+  const [authdata, setAuthdata] = React.useState({ email: "", password: "" });
+
+const data=useSelector(store=>store.AuthReducer)
+  const dispatch = useDispatch();
+  const googleclick = () => {};
+
+  const handlechange = (e) => {
+    const { name, value } = e.target;
+
+    setAuthdata({ ...authdata, [name]: value });
   };
+
+  const handlesubmit = () => {
+    if (authdata.email && authdata.password) {
+      dispatch(Getlogin(authdata));
+    } else {
+      alert("Invalid Feild");
+    }
+  };
+
+
+
+
+
   return (
     <div className="container_form">
       <div className="text">
-        <Signtext/>
-
-        </div>
+        <Signtext />
+      </div>
 
       <div className="form">
         <div className="heading">
@@ -33,12 +62,30 @@ const Siginform = () => {
             </div>
           </div>
         </div>
+
         <div className="heading">
-          <Input placeholder="Enter Email" type={"email"} />
+          <FormControl isRequired>
+            <Input
+              placeholder="Enter Email"
+              type={"email"}
+              name="email"
+              onChange={handlechange}
+              value={authdata.email}
+            />
+          </FormControl>
         </div>
         <div className="heading">
-          <Input placeholder="Enter Password" type={"password"} />
+          <FormControl isRequired>
+            <Input
+              placeholder="Enter Password"
+              type={"password"}
+              name="password"
+              onChange={handlechange}
+              value={authdata.password}
+            />
+          </FormControl>
         </div>
+
         <div id="head">
           <Text color={"#25cf60"}>Forget Password</Text>
         </div>
@@ -50,10 +97,13 @@ const Siginform = () => {
             height="48px"
             width="150px"
             color="white"
+            onClick={handlesubmit}
+            variant={"solid"}
           >
             Login
           </Button>
         </div>
+
         <div className="footer_div">
           <div className="footer">
             {" "}
