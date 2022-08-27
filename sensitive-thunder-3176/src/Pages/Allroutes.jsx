@@ -4,7 +4,14 @@ import { Route, Routes } from "react-router-dom";
 
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
-import Home from "./Home/FinalHome";
+
+import Feature from "./Feature/Feature";
+import FinalHome from "./Home/FinalHome";
+
+
+
+
+
 import Signin from "./Signin/Signin";
 
 import TimeSide from "./TimeSheet/TimeSide";
@@ -21,10 +28,15 @@ import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
 
 
-import Req from "./Signin/Req";
-import FinalIntegration from "./Integration/FinalIntegration";
+import Finalinte from "./Integration/Finalinte";
 import FinalFeature from "./Feature/FinalFeature";
-import CompletePricing from "./Pricing/CompletePricing";
+import Finalprice from "./Pricing/Finalprice";
+import AuthReq from "./Signin/AuthReq";
+import Logout from "./Signin/Logout";
+
+
+
+import Req from "./Signin/Req";
 
 
 const Allroutes = () => {
@@ -32,23 +44,23 @@ const Allroutes = () => {
     <>
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<FinalHome />}></Route>
         <Route path="/feature" element={<FinalFeature />}></Route>
-        <Route path="/pricing" element={<CompletePricing />}></Route>
-        <Route path="/integration" element={<FinalIntegration />}></Route>
+        <Route path="/pricing" element={<Finalprice />}></Route>
+        <Route path="/integration" element={<Finalinte />}></Route>
 
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/bookdemo" element={<Bookdemo />}></Route>
-        <Route path="/blog" element={<Blog />}></Route>
-
         <Route
-          path="/timesheet"
+          path="/blog"
           element={
-            <Req>
-              <TimeSide />
-            </Req>
+            <AuthReq>
+              <Blog />{" "}
+            </AuthReq>
           }
         ></Route>
+        <Route path="/Logout" element={<Logout />}></Route>
+        <Route path="/timesheet" element={<TimeSide />}></Route>
 
         <Route path="/timesheet/timesheet" element={<TimeSheet />}></Route>
         <Route path="/timesheet/dashboard" element={<Dashboard />}></Route>
@@ -62,6 +74,9 @@ const Allroutes = () => {
         <Route path="/timesheet/clients" element={<Clients />}></Route>
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
+
+
+
 
 
     </>

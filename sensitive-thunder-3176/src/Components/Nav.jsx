@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Navbar/Nav.css";
 import { Button } from "@chakra-ui/react";
 
-
+import {useSelector} from "react-redux"
 const Nav = () => {
+const data=useSelector(store=>store.AuthReducer.isAuth)
+const navigate=useNavigate()
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -29,15 +31,15 @@ const Nav = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [data]);
 
   const closeMenu = () => {
     setClick(false);
   };
-// const change=()=>{
-// setNav(true)
-// }
-  const navigatortoothersite = () => {};
+React.useEffect(()=>{
+
+},)
+  const navigatortoothersite = () => {navigate("/Signin")};
   return (
     <div className="header" id={scrollclass ? "headercon" : ""}>
       <nav className="navbar">
@@ -76,9 +78,12 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav-item" id="signin">
-            <Link to="/signin" onClick={onclose}>
+            {!data?  <Link to="/signin" onClick={onclose}>
               Sign in
-            </Link>
+            </Link>:<Link to="/Logout" onClick={onclose}>
+          Log out
+            </Link>}
+          
           </li>
         </ul>
         <div className="buttn_navbar">
