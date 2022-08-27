@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
 
-import Feature from "./Feature/Feature";
+
 import FinalHome from "./Home/FinalHome";
 
 import Signin from "./Signin/Signin";
