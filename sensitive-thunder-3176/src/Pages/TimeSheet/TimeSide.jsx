@@ -38,7 +38,6 @@ import {
   FaClipboard,
   FaClock,
 } from "react-icons/fa";
-import TimeSheet from "./TimeSheet";
 
 const LinkItems = [
   { name: "Timesheet", icon: FaClock, path: "timesheet" },
@@ -47,7 +46,7 @@ const LinkItems = [
   { name: "Computer Time", icon: FaLaptop, path: "computertime" },
   { name: "Projects", icon: FaFolderOpen, path: "projects" },
   { name: "Tags", icon: FaTags, path: "tags" },
-  { name: "Users", icon: FaTags, path: "users" },
+  { name: "Users", icon: FaUserFriends, path: "users" },
   { name: "Attendance", icon: FaCheckSquare, path: "attendance" },
   { name: "Timesheet Approvals", icon: FaClipboard, path: "approvals" },
   { name: "Clients", icon: FaBriefcase, path: "clients" },

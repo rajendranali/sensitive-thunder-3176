@@ -75,7 +75,7 @@ const Nav = () => {
               Blog
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" id="signin">
             <Link to="/signin" onClick={onclose}>
               Sign in
             </Link>
