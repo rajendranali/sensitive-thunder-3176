@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { FiSettings, FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 import { QuestionOutlineIcon, SettingsIcon, TimeIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaTachometerAlt,
   FaChartPie,
@@ -88,6 +88,10 @@ export default function TimeSide({ children }) {
 }
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const navigate = useNavigate();
+  const handleclick = () => {
+    navigate("/");
+  };
   return (
     <Box
       transition="3s ease"
@@ -106,6 +110,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           src={
             "https://cdn-m.timecamp.com/img/greenbranding/press/timecamp-pr-materials/svg/colorLogo.svg"
           }
+          onClick={handleclick}
         ></Image>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -142,7 +147,7 @@ const NavItem = ({ icon, p, children, ...rest }) => {
           as={icon}
         />
       )}
-      <Link activeClass="activeClass" to={`/timesheet/${p}`} smooth={true}>
+      <Link to={`/timesheet/${p}`} >
         {children}
       </Link>
     </Flex>
@@ -165,7 +170,6 @@ const MobileNav = ({ onOpen, name, ...rest }) => {
       <Box mr={"1230px"}>
         <Text fontWeight={500} fontSize={18}>
           {/* TODO  */}
-          name
         </Text>
       </Box>
       <IconButton
