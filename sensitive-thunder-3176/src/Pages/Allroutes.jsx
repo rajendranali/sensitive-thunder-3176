@@ -27,16 +27,18 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Home from "./Home/Home";
 import Req from "./Signin/Req";
+import Finalinte from "./Integration/Finalinte";
+import FinalFeature from "./Feature/FinalFeature";
 
 const Allroutes = () => {
   return (
     <>
-      <Navbar />
+  
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/feature" element={<Feature />}></Route>
+        <Route path="/" element={<FinalHome />}></Route>
+        <Route path="/feature" element={<FinalFeature />}></Route>
         <Route path="/pricing" element={<Pricing />}></Route>
-        <Route path="/integration" element={<Integration />}></Route>
+        <Route path="/integration" element={<Finalinte />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/bookdemo" element={<Bookdemo />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
@@ -62,7 +64,7 @@ const Allroutes = () => {
         <Route path="/timesheet/clients" element={<Clients />}></Route>
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
-      <Footer />
+
     </>
   );
 };
