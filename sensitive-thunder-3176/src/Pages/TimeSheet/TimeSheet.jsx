@@ -2,8 +2,10 @@ import { Button, IconButton } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Input } from "@chakra-ui/input";
 import { Box, Flex, HStack, Spacer, Text, VStack } from "@chakra-ui/layout";
+
 import { Tooltip } from "@chakra-ui/tooltip";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import {
   FiCalendar,
   FiChevronDown,
@@ -40,23 +42,23 @@ const days = [
   "Saturday",
 ];
 const TimeSheet = () => {
+  const [task, setTask] = useState("");
+  const [note, setNote] = useState("");
+
   const tasks = [];
   const d = new Date();
   let day = days[d.getDay()];
   let date = d.getDate();
   let monthName = months[d.getMonth()];
+
+  
+
   return (
     <div>
       <TimeSide />
       <Box mt={-785} ml={265} bgColor={"white"} h={"80vh"} w={"86%"}>
         {/*TODO:  import Your Component here */}
-        <Box
-          
-          m={"auto"}
-          justifyContent={"center"}
-          h={"80vh"}
-          w={"70%"}
-        >
+        <Box m={"auto"} justifyContent={"center"} h={"80vh"} w={"70%"}>
           <HStack mt={50} h={100} w={"100%"}>
             <Flex w={150}>
               <Tooltip
@@ -198,7 +200,10 @@ const TimeSheet = () => {
               variant="outline"
               border={"none"}
               _hover={{ border: "1px solid gray" }}
+              value={task}
+              onChange={(e) => setTask(e.target.value)}
             ></Input>
+
             <Spacer />
             <Input
               fontSize={14}
@@ -209,6 +214,8 @@ const TimeSheet = () => {
               variant="outline"
               border={"none"}
               _hover={{ border: "1px solid gray" }}
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
             ></Input>
             <Spacer />
             <Button
@@ -223,11 +230,10 @@ const TimeSheet = () => {
 
           {tasks.length === 0 ? (
             <Box>
-              <VStack  justifyContent="center">
+              <VStack justifyContent="center">
                 <Image
                   h={"300px"}
                   w={"250px"}
-                  
                   src={
                     "https://cdn.timecamp.com/res/css/images/timesheet-classic-empty-state.svg"
                   }
