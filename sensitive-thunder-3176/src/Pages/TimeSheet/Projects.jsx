@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/button";
-
+import "../../Styles/Home/pro.css"
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
 
@@ -18,7 +18,7 @@ const Projects = () => {
     }
   };
   const setdata = (e) => {
-    setTodo([...todo, { title: e.target.value, id: Date.now() }]);
+    setTodo([...todo, { title: e.target.value, id: Date.now(), subtask:""}]);
   };
   React.useEffect(() => {});
 
@@ -47,6 +47,7 @@ const Projects = () => {
             width: "100%",
             height: "600px",
           }}
+
         >
           {todo?.map((e, index) => (
             <div
@@ -55,6 +56,7 @@ const Projects = () => {
                 heigth: "100px",
               }}
               key={e.id}
+              className="project_div"
             >
               <div style={{ textAlign: "center" }}>
                 <Text
@@ -68,6 +70,7 @@ const Projects = () => {
                   Project Name: {e.title}
                 </Text>
               </div>
+          
             </div>
           ))}
         </div>
