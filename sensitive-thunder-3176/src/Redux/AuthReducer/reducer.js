@@ -8,7 +8,6 @@ const intial = {
 
 export const reducer = (state = intial, action) => {
   const { type, payload } = action;
-console.log(action);
   switch (type) {
     case types.GET_Login_REQUEST:
       return { ...state, isLoading: true };

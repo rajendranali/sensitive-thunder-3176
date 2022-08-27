@@ -17,7 +17,11 @@ import {
   FiRefreshCw,
   FiUser,
 } from "react-icons/fi";
+import { addTask, getTasks } from "../../Redux/AppReducer/action";
+import { useDispatch, useSelector } from "react-redux";
+
 import TimeSide from "./TimeSide";
+import Task from "./Task";
 const months = [
   "January",
   "February",
@@ -44,14 +48,28 @@ const days = [
 const TimeSheet = () => {
   const [task, setTask] = useState("");
   const [note, setNote] = useState("");
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.AppReducer.tasks);
 
-  const tasks = [];
   const d = new Date();
   let day = days[d.getDay()];
   let date = d.getDate();
   let monthName = months[d.getMonth()];
 
-  
+  const handleAddTask = () => {
+    if (task) {
+      const payload = {
+        name: task,
+        note: note,
+      };
+
+      dispatch(addTask(payload)).then((r) => dispatch(getTasks(r)));
+    }
+  };
+  useEffect(() => {
+    dispatch(getTasks());
+  }, []);
+  console.log(tasks);
 
   return (
     <div>
@@ -195,7 +213,7 @@ const TimeSheet = () => {
           >
             <Input
               placeholder="Select task and project"
-              h={"60px"}
+              h={"50px"}
               w={"30%"}
               variant="outline"
               border={"none"}
@@ -217,6 +235,17 @@ const TimeSheet = () => {
               value={note}
               onChange={(e) => setNote(e.target.value)}
             ></Input>
+            <Tooltip label="Add Task" placement="bottom-start" fontSize="md">
+              <IconButton
+                color={"gray"}
+                bgColor={"white"}
+                border={"1px solid gray"}
+                borderRadius={7}
+                icon={<FiPlus />}
+                _hover={{ bgColor: "#eaeaea" }}
+                onClick={handleAddTask}
+              ></IconButton>
+            </Tooltip>
             <Spacer />
             <Button
               _hover={{ backgroundColor: "#7bca84", color: "white" }}
@@ -283,7 +312,10 @@ const TimeSheet = () => {
               </HStack>
             </Box>
           ) : (
-            <Box></Box>
+            <Box>
+              {tasks.length > 0 &&
+                tasks.map((task) => <Task task={task} key={task.id} />)}
+            </Box>
           )}
         </Box>
       </Box>
