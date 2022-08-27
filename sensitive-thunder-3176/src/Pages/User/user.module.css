@@ -4,3 +4,14 @@
     color: #88a9f9;
   
 }
+.userBox{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 95%;
+  margin-top: 50px;
+  height: auto;
+}
+.accountbtn{
+   font-size: 20px;
+   
+}
