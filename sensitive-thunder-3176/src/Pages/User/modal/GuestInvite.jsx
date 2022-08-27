@@ -1,10 +1,10 @@
 import React from 'react'
 import {BiPlus} from "react-icons/bi"
-import {Button,ModalOverlay,Modal,ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter,useDisclosure} from "@chakra-ui/react"
+import {Button,ModalOverlay,Modal,ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter,useDisclosure,Box} from "@chakra-ui/react"
 function GuestInvite() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-      <>
+      <Box marginLeft={10} marginRight={5} >
         
         <Button w={150} borderRadius="10px" bg="#4bb063" color="white" onClick={onOpen}><BiPlus/>Invite people</Button>
         <Modal
@@ -28,7 +28,7 @@ function GuestInvite() {
             </ModalFooter>
           </ModalContent>
         </Modal>
-      </>
+      </Box>
     )
 }
 
