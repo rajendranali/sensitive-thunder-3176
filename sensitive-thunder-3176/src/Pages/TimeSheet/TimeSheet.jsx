@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import TimeSide from "./TimeSide";
 import Task from "./Task";
+import { useNavigate } from "react-router-dom";
 const months = [
   "January",
   "February",
@@ -50,11 +51,16 @@ const TimeSheet = () => {
   const [note, setNote] = useState("");
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.AppReducer.tasks);
+  const navigate = useNavigate();
 
-  const d = new Date();
+  let d = new Date();
   let day = days[d.getDay()];
   let date = d.getDate();
   let monthName = months[d.getMonth()];
+
+  const refreshData = () => {
+    dispatch(getTasks());
+  };
 
   const handleAddTask = () => {
     if (task) {
@@ -66,6 +72,20 @@ const TimeSheet = () => {
       dispatch(addTask(payload)).then((r) => dispatch(getTasks(r)));
     }
   };
+
+  const handleEmptyTaskAdd = () => {
+    const payload = {
+      name: "",
+      note: "",
+      tag: "",
+    };
+
+    dispatch(addTask(payload)).then((r) => dispatch(getTasks(r)));
+  };
+
+  const handleSubmitApproval = () => {
+    navigate("/timesheet/approvals");
+  };
   useEffect(() => {
     dispatch(getTasks());
   }, []);
@@ -74,7 +94,7 @@ const TimeSheet = () => {
   return (
     <div>
       <TimeSide />
-      <Box mt={-785} ml={265} bgColor={"white"} h={"80vh"} w={"86%"}>
+      <Box mt={-835} ml={265} bgColor={"white"} h={"93vh"} w={"86%"}>
         {/*TODO:  import Your Component here */}
         <Box m={"auto"} justifyContent={"center"} h={"80vh"} w={"70%"}>
           <HStack mt={50} h={100} w={"100%"}>
@@ -169,6 +189,7 @@ const TimeSheet = () => {
                 borderRadius={7}
                 icon={<FiRefreshCw />}
                 _hover={{ bgColor: "#eaeaea" }}
+                onClick={refreshData}
               />
             </Tooltip>
 
@@ -256,67 +277,74 @@ const TimeSheet = () => {
               ADD TIME ENTRY
             </Button>
           </HStack>
-
-          {tasks.length === 0 ? (
-            <Box>
-              <VStack justifyContent="center">
-                <Image
-                  h={"300px"}
-                  w={"250px"}
-                  src={
-                    "https://cdn.timecamp.com/res/css/images/timesheet-classic-empty-state.svg"
-                  }
-                ></Image>
-                <Box ml={5} mt={-50}>
-                  <Text fontSize={"24px"} fontWeight={500}>
-                    No recent Time entries
-                  </Text>
-                </Box>
-                <Box ml={5} mt={"-50px"}>
-                  <Text fontSize={"14px"}>
-                    Seems like you haven’t tracked any time yet
-                  </Text>
-                </Box>
-              </VStack>
-              <HStack>
-                <Tooltip
-                  label="new time entry"
-                  placement="bottom-start"
-                  fontSize="md"
-                >
-                  <IconButton
-                    color={"gray"}
-                    bgColor={"white"}
-                    border={"1px solid gray"}
-                    borderRadius={7}
-                    icon={<FiPlus />}
-                  ></IconButton>
-                </Tooltip>
-                <Tooltip
-                  label="entries from previous timesheets"
-                  placement="bottom-start"
-                  fontSize="md"
-                >
-                  <IconButton
-                    color={"gray"}
-                    bgColor={"white"}
-                    border={"1px solid gray"}
-                    borderRadius={7}
-                    icon={<FiCopy />}
-                  ></IconButton>
-                </Tooltip>
-                <Spacer />
-                <Button bgColor={"#fcbd01"} color={"white"}>
-                  Pending Approval - Reopen
-                </Button>
-              </HStack>
-            </Box>
-          ) : (
-            <Box>
-              {tasks.length > 0 &&
-                tasks.map((task) => <Task task={task} key={task.id} />)}
-            </Box>
-          )}
+          <Box>
+            {tasks.length === 0 ? (
+              <Box>
+                <VStack justifyContent="center">
+                  <Image
+                    h={"300px"}
+                    w={"250px"}
+                    src={
+                      "https://cdn.timecamp.com/res/css/images/timesheet-classic-empty-state.svg"
+                    }
+                  ></Image>
+                  <Box ml={5} mt={-50}>
+                    <Text fontSize={"24px"} fontWeight={500}>
+                      No recent Time entries
+                    </Text>
+                  </Box>
+                  <Box ml={5} mt={"-50px"}>
+                    <Text fontSize={"14px"}>
+                      Seems like you haven’t tracked any time yet
+                    </Text>
+                  </Box>
+                </VStack>
+              </Box>
+            ) : (
+              <Box mt={50} border={"1px solid gray"} borderRadius={10}>
+                {tasks.length > 0 &&
+                  tasks.map((task) => <Task task={task} key={task.id} />)}
+              </Box>
+            )}
+          </Box>
+          <HStack mt={"60px"}>
+            <Tooltip
+              label="new time entry"
+              placement="bottom-start"
+              fontSize="md"
+            >
+              <IconButton
+                color={"gray"}
+                bgColor={"white"}
+                border={"1px solid gray"}
+                borderRadius={7}
+                icon={<FiPlus />}
+                onClick={handleEmptyTaskAdd}
+              ></IconButton>
+            </Tooltip>
+            <Tooltip
+              label="entries from previous timesheets"
+              placement="bottom-start"
+              fontSize="md"
+            >
+              <IconButton
+                color={"gray"}
+                bgColor={"white"}
+                border={"1px solid gray"}
+                borderRadius={7}
+                icon={<FiCopy />}
+              ></IconButton>
+            </Tooltip>
+            <Spacer />
+            <Button
+              bgColor={"white"}
+              color={"gray"}
+              border={"1px solid gray"}
+              onClick={handleSubmitApproval}
+            >
+              Submit for Approval
+            </Button>
+          </HStack>
         </Box>
       </Box>
     </div>

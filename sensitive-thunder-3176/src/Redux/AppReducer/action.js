@@ -73,12 +73,22 @@ const getTasks = (params) => (dispatch) => {
 
 const addTask = (payload) => (dispatch) => {
   dispatch({ type: types.ADD_TASK_REQUEST });
-  axios
+  return axios
     .post("http://localhost:8080/tasks", payload)
     .then((r) => {
-      return dispatch({ type: types.ADD_TASK_REQUEST, payload: r.data });
+      dispatch({ type: types.ADD_TASK_REQUEST, payload: r.data });
     })
     .catch((e) => dispatch({ type: types.ADD_TASK_FAILURE, payload: e.data }));
 };
 
-export { getTags, postTags, getTasks, addTask };
+const deleteTask = (id) => (dispatch) => {
+  dispatch({ type: types.DELETE_TASK_REQUEST });
+  return axios
+    .delete(`http://localhost:8080/tasks/${id}`)
+    .then((r) => dispatch({ type: types.DELETE_TASK_SUCCESS, payload: r.data }))
+    .catch((e) =>
+      dispatch({ type: types.DELETE_TASK_FAILURE, payload: e.data })
+    );
+};
+
+export { getTags, postTags, getTasks, addTask, deleteTask };

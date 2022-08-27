@@ -165,7 +165,7 @@ const MobileNav = ({ onOpen, name, ...rest }) => {
       <Box mr={"1230px"}>
         <Text fontWeight={500} fontSize={18}>
           {/* TODO  */}
-          name
+          
         </Text>
       </Box>
       <IconButton
