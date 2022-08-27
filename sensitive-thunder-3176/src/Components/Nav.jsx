@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Navbar/Nav.css";
 import { Button } from "@chakra-ui/react";
 
 import {useSelector} from "react-redux"
 const Nav = () => {
 const data=useSelector(store=>store.AuthReducer.isAuth)
+const navigate=useNavigate()
 
-console.log(data,"navdat");
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -31,15 +31,15 @@ console.log(data,"navdat");
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [data]);
 
   const closeMenu = () => {
     setClick(false);
   };
-// const change=()=>{
-// setNav(true)
-// }
-  const navigatortoothersite = () => {};
+React.useEffect(()=>{
+
+},)
+  const navigatortoothersite = () => {navigate("/Signin")};
   return (
     <div className="header" id={scrollclass ? "headercon" : ""}>
       <nav className="navbar">
