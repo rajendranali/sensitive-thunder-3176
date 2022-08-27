@@ -1,7 +1,7 @@
 import React ,{useState,useEffect}from 'react'
 import {Box,Heading,Text,Flex,Button,Input,Avatar,Select} from "@chakra-ui/react"
 import {FiUserPlus} from "react-icons/fi"
-import {data} from "./data"
+
 import {Link} from "react-router-dom"
 import styles from "./user.module.css"
 import GuestInvite from './modal/GuestInvite'
@@ -12,10 +12,11 @@ import {BsPlusLg} from  "react-icons/bs"
 import {RiDeleteBin5Line} from "react-icons/ri"
 import axios from "axios"
 function User() {
-    const [user,setUser]=useState(data)
+    const [user,setUser]=useState([])
     useEffect(() =>{
-      axios.get()
+      axios.get(`http://localhost:8080/user`).then((r)=>setUser(r.data))
     },[])
+    console.log(user)
   return (
     <div>
         <Box marginTop={150}>
@@ -62,11 +63,12 @@ function User() {
                 </Box>
                 
             </Flex>
-            <Box marginTop="30px"><Flex>
+            <Box marginTop="30px" ><Flex>
            <input type="checkbox"  style={{marginRight:"20px",marginLeft:"20px"}} />
                 <Text marginTop="auto" marginBottom="auto">People</Text>
-                <Button><BiEdit/></Button>
-                <Button><BsPlusLg/></Button>
+                
+                <Button ><BiEdit/></Button>
+                <Button ><BsPlusLg/></Button>
             </Flex></Box>
            
         <Box marginTop="40px" >
@@ -79,8 +81,10 @@ function User() {
                          <input type="checkbox"  style={{marginRight:"20px",marginLeft:"20px"}} />
                         <Avatar src='https://bit.ly/broken-link' h="30px"  w="30px"/>
                 <Text marginLeft={10} marginTop="auto" marginBottom="auto">{user.email}</Text>
+                <Box className={styles.bgchange}>
                 <Button marginLeft={10} className={styles.accountbtn}><BiEdit fontSize={20}/></Button>
                 <Button marginLeft={5} className={styles.accountbtn}><RiDeleteBin5Line fontSize={20}/></Button>
+                </Box>
                 </Flex>
                     )})
                 }

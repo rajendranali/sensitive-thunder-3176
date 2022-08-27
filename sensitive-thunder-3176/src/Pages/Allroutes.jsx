@@ -26,10 +26,6 @@ import Footer from "../Components/Footer";
 
 import Req from "./Signin/Req";
 
-
-
-
-import Req from "./Signin/Req";
 import FinalIntegration from "./Integration/FinalIntegration";
 import FinalFeature from "./Feature/FinalFeature";
 import CompletePricing from "./Pricing/CompletePricing";
