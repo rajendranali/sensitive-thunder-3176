@@ -1,5 +1,5 @@
 import { Box, Button,  Flex, Input, Select, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Table,
   Thead,
@@ -11,7 +11,15 @@ import {
   
   TableContainer,
 } from '@chakra-ui/react'
+import { useSelector } from 'react-redux/es/exports'
 const Approval = () => {
+  const [approved,setApproved]= useState(false)
+const tasks= useSelector(state=>state.AppReducer.tasks)
+
+const handleApproved=()=>{
+  setApproved(true)
+}
+// console.log(tasks)
   return (
     <Box m={4}>
       <Text color={'gray.400'} fontSize={'2xl'}>Daily approvals</Text>
@@ -45,34 +53,25 @@ const Approval = () => {
     <Thead >
       <Tr>
         <Th>Period</Th>
+        <Th>Name</Th>
         <Th>Total Time</Th>
         <Th>Status</Th>
-        <Th>Last Action</Th>
         <Th>Approver</Th>
       </Tr>
     </Thead>
     <Tbody>
-      <Tr>
-        <Td>Aug 23, 2022</Td>
+      {tasks.length>0 && tasks.map((task)=>{
+       return ( <Tr>
+        <Td>{task.curDate}</Td>
         <Td>2m</Td>
-        <Td>2m</Td>
-        <Td>2m</Td>
-        <Td><Button color={'white'} bgColor={'orange.300'}>Pending Approval</Button></Td>
+        <Td>{task.name}</Td>
+        <Td><Button color={'white'} bgColor={approved?"green.400":"orange.300"} onClick={handleApproved}>Pending Approval</Button></Td>
+        <Td>eve.holt@reqres.in</Td>
       </Tr>
-      <Tr>
-      <Td>Aug 23, 2022</Td>
-        <Td>2m</Td>
-        <Td>2m</Td>
-        <Td>2m</Td>
-        <Td><Button color={'white'} bgColor={'orange.300'}>Pending Approval</Button></Td>
-      </Tr>
-      <Tr>
-      <Td>Aug 23, 2022</Td>
-        <Td>2m</Td>
-        <Td>2m</Td>
-        <Td>2m</Td>
-        <Td><Button color={'white'} bgColor={'orange.300'}>Pending Approval</Button></Td>
-      </Tr>
+      )
+      })}
+      
+     
     </Tbody>
     <Tfoot>
       <Tr>

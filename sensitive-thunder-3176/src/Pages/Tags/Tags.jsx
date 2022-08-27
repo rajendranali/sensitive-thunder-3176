@@ -5,9 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTags, postTags } from "../../Redux/AppReducer/action";
 const Tags = () => {
   const tags = useSelector((state) => state.AppReducer.tags);
-  const [tag, setTag] = useState("");
-  const [create, setCreate] = useState(false);
-  // console.log(tags)
+
+  const [tag,setTag]=useState("")
+  const [create,setCreate]= useState(false)
+// console.log(tags)
+
+
   const dispatch = useDispatch();
   const handleAddTag = () => {
     if (tag.length > 0) {

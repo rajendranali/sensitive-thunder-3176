@@ -8,6 +8,7 @@ const TagCard = ({ tagName, key, id }) => {
   const dispatch = useDispatch();
   const tags = useSelector((state) => state.AppReducer.tags);
 
+
   const handleTagDelete = (id) => {
     dispatch(deleteTags(id)).then((r) => dispatch(getTags()));
   };
