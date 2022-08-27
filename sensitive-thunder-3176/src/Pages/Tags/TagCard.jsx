@@ -6,7 +6,7 @@ const TagCard = () => {
   return (
     <Box m={4}  p={4} rounded={8} bgColor={'gray.100'}>
         <Flex justifyContent={'space-between'}>
-            <Text fontWeight={'semibold'} color={'grey'} fontSize={20}>tageName</Text>
+            <Text fontWeight={'semibold'} color={'grey'} fontSize={20}>Tag Name</Text>
             <ButtonGroup>
                 <Button border={'2px solid'} borderColor={'#b7b8b8'} _hover={'grey'} bgColor={'white'} ><GrAdd/></Button>
                 <Button  border={'2px solid'} borderColor={'#b7b8b8'} _hover={'grey'} bgColor={'white'}><AiOutlineDelete/></Button>
