@@ -1,8 +1,15 @@
-import { Avatar, Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
-import React from "react";
+import { Avatar, Box, Button, Flex, Input, Stack, Text } from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import TagCard from "./TagCard";
-
+import  {useDispatch} from 'react-redux'
+import { getTags } from "../../Redux/AppReducer/action";
 const Tags = () => {
+
+  const dispatch = useDispatch()
+  useEffect(()=>{
+dispatch(getTags())
+
+  },[])
   return (
     <Box ml={10}>
       
@@ -17,6 +24,8 @@ const Tags = () => {
           >
             + Add tag list
           </Button>
+          <Input />
+          <Button>Create</Button>
           <Text>
             Manage your tags, like list of customers or activities. All
             workspace members can assign tags to time entries, when they track
