@@ -24,26 +24,17 @@ import Approvals from "./TimeSheet/Approvals";
 import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
 
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Home from "./Home/Home";
+
 import Req from "./Signin/Req";
-
-
-
-
 
 const Allroutes = () => {
   return (
     <>
-
       <Navbar />
 
-
-     
-
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/feature" element={<Feature />}></Route>
         <Route path="/pricing" element={<Pricing />}></Route>
         <Route path="/integration" element={<Integration />}></Route>
@@ -74,7 +65,6 @@ const Allroutes = () => {
       </Routes>
 
       <Footer />
-
     </>
   );
 };
