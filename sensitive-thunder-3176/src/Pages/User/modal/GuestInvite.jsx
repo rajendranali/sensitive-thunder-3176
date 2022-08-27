@@ -1,6 +1,8 @@
 import React from 'react'
 import {BiPlus} from "react-icons/bi"
+import styles from "../user.module.css"
 import {Button,ModalOverlay,Modal,ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter,useDisclosure,Box} from "@chakra-ui/react"
+import { FaStaylinked } from 'react-icons/fa'
 function GuestInvite() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
@@ -12,13 +14,20 @@ function GuestInvite() {
           onClose={onClose}
           isOpen={isOpen}
           motionPreset='slideInBottom'
+          w="600px"
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>Invite user</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-             
+             <Box className={styles.guest}>
+              <h3>Each person's email address:</h3>
+             <div styled={{marginTop:"30px"}}>
+             <input type="text" name="" id="" placeholder="Email address  " />
+             </div>
+
+             </Box>
             </ModalBody>
             <ModalFooter>
               <Button colorScheme='blue' mr={3} onClick={onClose}>

@@ -1,6 +1,10 @@
 import * as types from "./Actiontype";
+
 import axios from "axios";
 const Getlogin = (params) => (dispatch) => {
+
+
+
   dispatch({ type: types.GET_Login_REQUEST });
 
   return axios
@@ -13,10 +17,12 @@ const Getlogin = (params) => (dispatch) => {
     });
 };
 
+
 const Getlogout = () => (dispatch) => {
   dispatch({ type: types.GET_Loginout_REQUEST });
 
   return dispatch({ type: types.GET_Loginout_SUCCESS, payload: undefined });
+
 };
 
 export { Getlogout, Getlogin };

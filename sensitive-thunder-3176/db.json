@@ -1,0 +1,58 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "task1",
+      "tag": "tag1",
+      "note": "note1"
+    },
+    {
+      "name": "task 2",
+      "note": "descp note 2",
+      "id": 2
+    }
+  ],
+  "user": [
+    {
+      "group_id": "1234",
+      "user_id": "1231456",
+      "email": "mr@smith.com",
+      "login_count": "1402",
+      "login_time": "2020-12-21 17:15:22",
+      "display_name": "Agent Smith",
+      "synch_time": "2020-12-21 17:10:21"
+    },
+    {
+      "group_id": "1234",
+      "user_id": "1235213",
+      "email": "mrs@smith.com",
+      "login_count": "22084",
+      "login_time": "2021-03-11 10:21:15",
+      "display_name": "Jan Kowalski",
+      "synch_time": "2020-12-21 23:29:09"
+    },
+    {
+      "group_id": "1234",
+      "user_id": "5123213",
+      "email": "some@example.com",
+      "login_count": "1775",
+      "login_time": "2020-12-21 13:43:12",
+      "display_name": "Example Name",
+      "synch_time": "2020-12-21 14:00:45"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "tag1"
+    },
+    {
+      "name": "tag5",
+      "id": 2
+    },
+    {
+      "name": "tag3",
+      "id": 3
+    }
+  ]
+}
