@@ -21,7 +21,8 @@ const getTagsFailure = (e) => {
 }
 const getTags = (params) => (dispatch) => {
     dispatch(getMusicRecordsRequest())
-    return axios.get("http://localhost:8080/albums",params).then((r) => {
+    return axios.get("https://app.timecamp.com/third_party/api/tag_list",params).then((r) => {
+        console.log(r.data)
         return dispatch(getMusicRecordsSuccess(r))
     }).catch((e) => {
         return dispatch(getTagsFailure(e))
@@ -45,7 +46,7 @@ const postTagsFailure = (e) => {
     }
 }
 const postTags = (params,tag_id) => (dispatch) => {
-    dispatch(getMusicRecordsRequest())
+    dispatch(postMusicRecordsRequest())
     return axios.post(`https://app.timecamp.com/third_party/api
     /tag/${tag_id}`,params).then((r) => {
         return dispatch(postMusicRecordsSuccess(r))
