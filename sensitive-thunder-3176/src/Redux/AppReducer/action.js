@@ -23,7 +23,6 @@ const getTags = (params) => (dispatch) => {
   return axios
     .get("http://localhost:8080/tags", params)
     .then((r) => {
-     
       return dispatch(getMusicRecordsSuccess(r));
     })
     .catch((e) => {
@@ -47,11 +46,10 @@ const postTagsFailure = (e) => {
     payload: e,
   };
 };
-const postTags = (params, ) => (dispatch) => {
+const postTags = (params) => (dispatch) => {
   dispatch(postMusicRecordsRequest());
   return axios
-    .post(
-      `http://localhost:8080/tags`,params)
+    .post(`http://localhost:8080/tags`, params)
     .then((r) => {
       return dispatch(postMusicRecordsSuccess(r));
     })
@@ -70,12 +68,50 @@ const getTasks = (params) => (dispatch) => {
 
 const addTask = (payload) => (dispatch) => {
   dispatch({ type: types.ADD_TASK_REQUEST });
-  axios
+  return axios
     .post("http://localhost:8080/tasks", payload)
     .then((r) => {
-      return dispatch({ type: types.ADD_TASK_REQUEST, payload: r.data });
+      dispatch({ type: types.ADD_TASK_REQUEST, payload: r.data });
     })
     .catch((e) => dispatch({ type: types.ADD_TASK_FAILURE, payload: e.data }));
 };
 
-export { getTags, postTags, getTasks, addTask };
+const deleteTask = (id) => (dispatch) => {
+  dispatch({ type: types.DELETE_TASK_REQUEST });
+  return axios
+    .delete(`http://localhost:8080/tasks/${id}`)
+    .then((r) => dispatch({ type: types.DELETE_TASK_SUCCESS, payload: r.data }))
+    .catch((e) =>
+      dispatch({ type: types.DELETE_TASK_FAILURE, payload: e.data })
+    );
+};
+const deleteTags = (id) => (dispatch) => {
+  console.log(id);
+  dispatch({ type: types.DELETE_TASK_REQUEST });
+  return axios
+    .delete(`http://localhost:8080/tags/${id}`)
+    .then((r) => dispatch({ type: types.DELETE_TASK_SUCCESS, payload: r.data }))
+    .catch((e) =>
+      dispatch({ type: types.DELETE_TASK_FAILURE, payload: e.data })
+    );
+};
+
+const updateTask = (id, payload) => (dispatch) => {
+  dispatch({ type: types.UPDATE_TASK_REQUEST });
+  return axios
+    .patch(`http://localhost:8080/tasks/${id}`, payload)
+    .then((r) => dispatch({ type: types.UPDATE_TASK_SUCCESS, payload: r.data }))
+    .catch((err) =>
+      dispatch({ type: types.UPDATE_TASK_FAILURE, payload: err.data })
+    );
+};
+
+export {
+  getTags,
+  postTags,
+  getTasks,
+  addTask,
+  deleteTask,
+  deleteTags,
+  updateTask,
+};
