@@ -4,11 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Blog from "./Blog";
 import Bookdemo from "./Bookdemo";
-import Feature from "./Feature/Feature";
 import Home from "./Home/FinalHome";
-import Navbar from "../Components/Navbar";
-import Integration from "./Integration/Integration";
-import Pricing from "./Pricing/Pricing";
 import Signin from "./Signin/Signin";
 
 import TimeSide from "./TimeSheet/TimeSide";
@@ -24,20 +20,23 @@ import Approvals from "./TimeSheet/Approvals";
 import Clients from "./TimeSheet/Clients";
 import Invoices from "./TimeSheet/Invoices";
 
-import Footer from "../Components/Footer";
 
 import Req from "./Signin/Req";
+import FinalIntegration from "./Integration/FinalIntegration";
+import FinalFeature from "./Feature/FinalFeature";
+import CompletePricing from "./Pricing/CompletePricing";
+
 
 const Allroutes = () => {
   return (
     <>
-      <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/feature" element={<Feature />}></Route>
-        <Route path="/pricing" element={<Pricing />}></Route>
-        <Route path="/integration" element={<Integration />}></Route>
+        <Route path="/feature" element={<FinalFeature />}></Route>
+        <Route path="/pricing" element={<CompletePricing />}></Route>
+        <Route path="/integration" element={<FinalIntegration />}></Route>
+
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/bookdemo" element={<Bookdemo />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
@@ -64,7 +63,7 @@ const Allroutes = () => {
         <Route path="/timesheet/invoices" element={<Invoices />}></Route>
       </Routes>
 
-      <Footer />
+
     </>
   );
 };
