@@ -21,3 +21,11 @@
 .bgchange:hover{
   opacity: 1;
 }
+.back:hover{
+  background-color: rgb(221, 221, 221);
+}
+.guest{
+  width: 500px ;
+  height: auto;
+  
+}
